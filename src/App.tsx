@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'antd/dist/antd.css';
+import Login from './components/login/Login';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Forgot } from './components/forgot/Forgot';
+import ResetPassword from './components/resetPassword/ResetPassword';
+import LeftMenu from './components/template/leftMenu/LeftMenu';
+import Layout from './components/template/Layout';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Layout/>}/>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/forgot' element={<Forgot/>}/>
+            <Route path='/reset' element={<ResetPassword/>}/>
+          </Routes>
+      </BrowserRouter>
   );
 }
 
