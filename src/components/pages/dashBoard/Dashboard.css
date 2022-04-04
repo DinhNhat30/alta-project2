@@ -1,0 +1,14 @@
+.layout_Dashboard {
+    width: 1240px;
+    height: 88px;
+    left: 200px;
+    top: 0px;
+}
+
+.ant-layout-header {
+    background: white;
+}
+
+.layout_Dashboard_Header {
+    display: block;
+}
