@@ -3,6 +3,7 @@ import React from 'react'
 import { Input, Space } from 'antd';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import './Login.css'
+import { Link } from 'react-router-dom';
 const Login = () => {
     return (
         <div className='login_Layout'>
@@ -21,9 +22,9 @@ const Login = () => {
                 <div className='login_Layout_Left_form_2'>
                     Quên mật khẩu ?
                 </div>
-                <button className='login_Layout_Left_Button'>
+                <Link to={`/`} className='login_Layout_Left_Button'>
                     Đăng nhập
-                </button>
+                </Link>
 
             </div>
             <div className='login_Layout_Right'>

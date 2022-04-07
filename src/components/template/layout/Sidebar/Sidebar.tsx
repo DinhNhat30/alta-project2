@@ -5,9 +5,10 @@ import { Layout, Menu } from 'antd';
 import { BsColumnsGap, BsFileEarmarkBarGraph, BsOctagon } from "react-icons/bs";
 import { BiLayer } from "react-icons/bi";
 import { IoEllipsisVerticalOutline } from "react-icons/io5";
-import { AiOutlineComment } from "react-icons/ai";
+import { AiOutlineComment ,AiOutlineExport } from "react-icons/ai";
 import { DesktopOutlined, } from '@ant-design/icons'
 import "./Sidebar.css";
+import 'antd/dist/antd.css';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -65,6 +66,10 @@ const Sidebar = () => {
                         )
                     })}
                 </Menu>
+                <div className='Siderbar_Logout'>
+                    <Link className='Siderbar_Logout_Link' to={`/login`}> <strong style={{ marginRight:"10px" , fontSize:"20px" }}> <AiOutlineExport/></strong> <strong>Đăng xuất</strong></Link>
+                </div>
+
             </Sider>
 
 
