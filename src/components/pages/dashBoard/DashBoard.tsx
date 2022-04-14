@@ -3,7 +3,7 @@ import { AiOutlineComment } from "react-icons/ai";
 import { BiLayer } from "react-icons/bi";
 import { DesktopOutlined, } from '@ant-design/icons'
 import "./Dashboard.css"
-import { Modal } from 'antd';
+// import { Modal } from 'antd';
 import { Area } from '@ant-design/charts';
 import ReactDOM from 'react-dom';
 import { RingProgress } from '@ant-design/plots';
@@ -11,6 +11,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import 'antd/dist/antd.css';
 import { Select } from 'antd';
+import Modal from '../../template/Modal/Modal';
 
 const { Option } = Select;
 
@@ -60,7 +61,7 @@ const DemoRingProgress2 = () => {
 
 const DashBoard = () => {
 
-    const [visible, setVisible] = useState(false);
+    
     const DemoArea = () => {
         const data = [
             {
@@ -223,73 +224,13 @@ const DashBoard = () => {
                         <p>Dashboard</p>
                     </div>
                     <div className=' layout_Dashboard_Header_HoTen col-4'>
-                        <div className='layout_Dashboard_Header_img' onClick={() => setVisible(true)}>
-                            <img src="./image/thongbao.png" alt="" />
-                        </div>
-                        <div className='layout_Dashboard_Header_img1'>
-                            <img src="./image/avata.png" alt="" />
-                        </div>
-                        <div className='layout_Dashboard_Header_TT'>
-                            <p style={{ marginTop: "13px" }}>xin chào</p>
-                            <p style={{ color: "#535261", fontSize: '16px', fontWeight: "700", }}>Lê Quỳnh Ái Vân</p>
-                        </div>
-                        <div className='clear_both'></div>
+                        
+                        <Modal/>
                     </div>
                     <div className='clear_both'></div>
                 </div>
 
-                <Modal
-                    title={
-                        <div style={{
-                            width: '100%',
-                            background: '#FF9138',
-                            height: '50px',
-                            padding: '16px',
-                            color: 'white',
-                            fontSize: '20px',
-                            fontWeight: '700px',
-                            borderTopLeftRadius: '8px',
-                            borderTopRightRadius: '8px'
 
-                        }}>
-                            Thông báo
-                        </div>
-                    }
-                    centered
-                    visible={visible}
-                    onOk={() => setVisible(false)}
-                    onCancel={() => setVisible(false)}
-                    width={400}
-                    footer={null}
-                >
-                    <div className='Dashboard_Modal'>
-                        <div className='Dashboard_Modal_NguoiDung'>Người dùng: Nguyễn Thị Thùy Dung</div>
-                        <div className='Dashboard_Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
-                    </div>
-                    <div className='Dashboard_Modal'>
-                        <div className='Dashboard_Modal_NguoiDung'>Người dùng: Nguyễn Thiên Chinh</div>
-                        <div className='Dashboard_Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
-                    </div>
-                    <div className='Dashboard_Modal'>
-                        <div className='Dashboard_Modal_NguoiDung'>Người dùng: Võ Thị Kim Liên</div>
-                        <div className='Dashboard_Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
-                    </div>
-                    <div className='Dashboard_Modal'>
-                        <div className='Dashboard_Modal_NguoiDung'>Người dùng: Nguyễn Quốc Huy</div>
-                        <div className='Dashboard_Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
-                    </div>
-                    <div className='Dashboard_Modal'>
-                        <div className='Dashboard_Modal_NguoiDung'>Người dùng: Võ Ngọc Lan Anh</div>
-                        <div className='Dashboard_Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
-                    </div>
-                    <div className='Dashboard_Modal'>
-                        <div className='Dashboard_Modal_NguoiDung'>Người dùng: Nguyễn thị Trúc Anh</div>
-                        <div className='Dashboard_Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
-                    </div>
-
-
-
-                </Modal>
                 <div className='row'>
                     <div className='col-8'>
                         <div className='layout_Dashboard_BieuDo'>Biểu đồ cấp số</div>
@@ -362,9 +303,9 @@ const DashBoard = () => {
                                    
 
                                     <Select defaultValue="Ngày" style={{ width: 100, marginLeft:'10px' }} >
-                                        <Option value="Ngày">Ngày</Option>
-                                        <Option value="Tuần">Tuần</Option>
-                                        <Option value="Tháng">Tháng</Option>
+                                        <Option className='hoverOption' value="Ngày">Ngày</Option>
+                                        <Option className='hoverOption' value="Tuần">Tuần</Option>
+                                        <Option className='hoverOption' value="Tháng">Tháng</Option>
                                     </Select>
 
                                 </div>

@@ -12,6 +12,10 @@ import Capso from './components/pages/Capso/Capso';
 import Dichvu from './components/pages/Dichvu/Dichvu';
 import HeThong from './components/pages/hethong/HeThong';
 import ThietBi from './components/pages/thietbi/ThietBi';
+import AddThietBi from './components/pages/thietbi/addThietBi/AddThietBi';
+import AddDichVu from './components/pages/Dichvu/addDichVu/AddDichVu';
+import { ThongTinNguoiDung } from './components/pages/thongTinNguoiDung/ThongTinNguoiDung';
+import AddCapSo from './components/pages/Capso/addCapSo/AddCapSo';
 
 
 
@@ -22,12 +26,17 @@ const App: React.FunctionComponent = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Menu />} >
-          <Route path='/dashboard' element={<DashBoard />} />
+          <Route path='/' element={<DashBoard />} />
           <Route path='/thietbi' element={<ThietBi />} />
           <Route path='/dichvu' element={<Dichvu />} />
           <Route path='/capso' element={<Capso />} />
           <Route path='/baocao' element={<BaoCao />} />
           <Route path='/hethong' element={<HeThong />} />
+          <Route path='/thietbi/themthietbi' element={<AddThietBi />} />
+          <Route path='/dichvu/themdichvu' element={<AddDichVu />} />
+          <Route path='/thongtinnguoidung' element={<ThongTinNguoiDung />} />
+          <Route path='/capso/capsomoi' element={<AddCapSo />} />
+
         </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/forgot' element={<Forgot />} />

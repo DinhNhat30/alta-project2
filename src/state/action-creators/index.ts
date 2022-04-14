@@ -1,14 +1,14 @@
 import { Dispatch } from "react";
-import { Action, IProduct } from "../actions";
+import { Action, ThietBi,  } from "../actions";
 import { ActtionType } from "../constants/ActionsTypes";
 
 
 
-export const setAllProduct = (products: IProduct[]) =>{
+export const setAllThietBi = (thietBi: ThietBi[]) =>{
     return (dispatch : Dispatch<Action>) =>{
         dispatch({
-            type : ActtionType.ALL_PRODUCTS,
-            products: products
+            type : ActtionType.ALL_THIETBI,
+            thietBi: thietBi
         })
     }
 }

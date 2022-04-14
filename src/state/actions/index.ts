@@ -1,21 +1,27 @@
 import { ActtionType } from "../constants/ActionsTypes"
 import {type} from "os"
 
-export interface IProduct {
-    id?:string
-    price?: string,
-    title?: string
+export interface ThietBi {
+    maTB?:string,
+    tenTB?: string,
+    address?: string,
+    trangThaiHD?: string,
+    trangThaiKN?: string,
+    dichVu?: string,
 }
 
-export interface All_Products {
-    type: ActtionType.ALL_PRODUCTS
-    products ?: IProduct[];
+export interface All_ThietBi {
+    type: ActtionType.ALL_THIETBI
+    thietBi ?: ThietBi[];
 }
 
 export interface ICollection{
-    id?:string
-    price?:string,
-    title?: string
+    maTB?:string,
+    tenTB?: string,
+    address?: string,
+    trangThaiHD?: string,
+    trangThaiKN?: string,
+    dichVu?: string,
 }
 
-export type Action = All_Products
+export type Action = All_ThietBi

@@ -1,0 +1,11 @@
+.ant-picker-suffix {
+    color: #FF7506;
+}
+
+.ant-table-tbody>tr:nth-child(even) {
+    background-color: #FFF2E7;
+}
+
+.ant-table-cell {
+    border-right: 1px solid #FFE3CD;
+}

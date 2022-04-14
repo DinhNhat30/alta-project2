@@ -1,10 +1,10 @@
 import {type} from "os"
 import { combineReducers } from "redux"
-import productReducer from './product';
+import productReducer from './thietBi';
 
 
 const reducer = combineReducers({
-    products: productReducer
+    thietBi: productReducer
 })
 
 export default reducer

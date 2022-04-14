@@ -9,13 +9,14 @@ import { AiOutlineComment ,AiOutlineExport } from "react-icons/ai";
 import { DesktopOutlined, } from '@ant-design/icons'
 import "./Sidebar.css";
 import 'antd/dist/antd.css';
+import Cty from '../../../../assets/images/Logoalta.png';
 
 const { Header, Content, Footer, Sider } = Layout;
 
 const SidebarData = [
     {
         title: "Dashboard",
-        path: "/dashboard",
+        path: "/",
         icon: <BsColumnsGap />
     },
     {
@@ -53,7 +54,7 @@ const Sidebar = () => {
 
             <Sider >
                 <div className="Sidebar_logo" >
-                    <img className='Sidebar_logo_img' width={80} src="./image/Logoalta.png" alt="" />
+                    <img className='Sidebar_logo_img' width={80} src={Cty} alt="" />
                 </div>
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
                     {SidebarData.map((item, index) => {
