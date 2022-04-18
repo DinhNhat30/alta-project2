@@ -1,18 +1,26 @@
 import React, { useState } from 'react'
 import { AiOutlineRight } from 'react-icons/ai';
-import { Form, Input, message, Button, Select } from 'antd';
+import { Form, Modal, message, Button, Select } from 'antd';
 import { Link } from 'react-router-dom';
-import Modal from '../../../template/Modal/Modal';
-import './AddCapSo.css'
+import Modal1 from '../../../template/Modal/Modal';
+import './AddCapSo.css';
+
 
 const { Option } = Select;
-
 function handleChange(value: any) {
     console.log(`selected ${value}`);
 }
 
 const AddCapSo = () => {
     const [form] = Form.useForm();
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const showModal = () => {
+        setIsModalVisible(true);
+    };
+
+
+
     return (
         <div className='layout_AddThietBi'>
             <div className='layout_AddThietbi_Header row' >
@@ -26,7 +34,7 @@ const AddCapSo = () => {
                     </div>
                 </div>
                 <div className=' layout_AddThietbi_Header_HoTen col-4' style={{ background: '#F7F7F7' }}>
-                    <Modal />
+                    <Modal1 />
                 </div>
                 <div className='clear_both'></div>
             </div>
@@ -47,38 +55,41 @@ const AddCapSo = () => {
                 <div className='layout_AddCapSo_Form_text_1'>
                     Dịch vụ khách hàng lựa chọn
                 </div>
-                <div>
-                    <div className="chosen-wrapper" data-js="custom-scroll">
-                        <select className="chosen-select" data-placeholder="Lorem ipsum dolor sit amet">
-                            <option></option>
-                            <option>Consectetur adipiscing</option>
-                            <option>Sed do eiusmod tempor</option>
-                            <option>Incididunt ut labore</option>
-                            <option>Voluptatem accusantium</option>
-                            <option>Duis aute irure dolor </option>
-                            <option>Nemo enim</option>
-                            <option>Consectetur adipiscing</option>
-                            <option>Sed do eiusmod tempor</option>
-                            <option>Incididunt ut labore</option>
-                            <option>Voluptatem accusantium</option>
-                            <option>Duis aute irure dolor </option>
-                            <option>Nemo enim</option>
-                            <option>Consectetur adipiscing</option>
-                            <option>Sed do eiusmod tempor</option>
-                            <option>Incididunt ut labore</option>
-                            <option>Voluptatem accusantium</option>
-                            <option>Duis aute irure dolor </option>
-                            <option>Nemo enim</option>
-                        </select>
-                    </div>
+                <div className='layout_AddCapSo_Form_Select' >
+                    <Select defaultValue="Chọn dịch vụ" style={{ width: '100%', marginLeft: '352px', marginTop: '15px' }} onChange={handleChange}>
+                        <Option className="layout_AddCapSo_Form_Select_option" value="Khám tim mạch">Khám tim mạch</Option>
+                        <Option className="layout_AddCapSo_Form_Select_option" value="khám sản - phụ khoa">khám sản - phụ khoa</Option>
+
+                        <Option className="layout_AddCapSo_Form_Select_option" value="khám răng hàm mặt">khám răng hàm mặt</Option>
+                        <Option className="layout_AddCapSo_Form_Select_option" value="khám tai mũi họng">khám tai mũi họng</Option>
+                    </Select>
+                </div>
+                <div className='layout_AddCapSo_Form_Button'>
+                    <Link to={'/capso'}> <Button className='layout_AddCapSo_Form_Button_1'>Hủy bỏ</Button></Link>
+
+                    <Button className='layout_AddCapSo_Form_Button_2' onClick={showModal}>In số</Button>
                 </div>
 
-
             </Form>
-
-
-
-
+            <Modal visible={isModalVisible} footer={null} onCancel={()=>{setIsModalVisible(false)}}>
+               <div className='layout_AddCapSo_Modal'>
+                   Số thứ tự được cấp 
+               </div>
+               <div className='layout_AddCapSo_Modal_random'>
+                  {((Math.random()*10000000) +1).toFixed(0) }
+               </div>
+               <div className='layout_AddCapSo_Modal_DichVu'>
+                   DV: khám răng hàm mặt <strong>(tại quầy số 1)</strong>
+               </div>
+               <div className='layout_AddCapSo_Modal_footer'>
+                   <div className='layout_AddCapSo_Modal_footer_text'>
+                       Thời gian cấp: 09:30 11/10/2021
+                   </div>
+                   <div className='layout_AddCapSo_Modal_footer_text mt-2'>
+                       Hạn sử dụng: 17:30 11/10/2021
+                   </div>
+               </div>
+            </Modal>
         </div>
     )
 }

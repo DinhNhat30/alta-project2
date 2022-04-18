@@ -114,7 +114,7 @@ const Dichvu = () => {
       dataIndex: 'chiTiet',
       key: 'chiTiet',
       width: 77,
-      render: () => <a>Chi tiết</a>,
+      render: () => <u style={{ cursor:'pointer', color:'#4277FF'}}>Chi tiết</u>,
     },
 
 
@@ -123,7 +123,7 @@ const Dichvu = () => {
       dataIndex: 'capNhat',
       key: 'capNhat',
       width: 106,
-      render: () => <a >Cập nhật</a>,
+      render: () => <u style={{ cursor:'pointer', color:'#4277FF'}} >Cập nhật</u>,
     },
   ];
 

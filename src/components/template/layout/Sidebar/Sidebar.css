@@ -86,3 +86,43 @@
 a:hover {
     color: #FF7506 !important;
 }
+
+.ant-menu-vertical .ant-menu-item-group-list .ant-menu-submenu-title,
+.ant-menu-vertical .ant-menu-submenu-title {
+    padding-right: 31px;
+    color: #7E7D88;
+}
+
+.ant-menu-item .ant-menu-item-icon+span,
+.ant-menu-submenu-title .ant-menu-item-icon+span,
+.ant-menu-item .anticon+span,
+.ant-menu-submenu-title .anticon+span {
+    margin-left: 5px;
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), margin 0.3s, color 0.3s;
+}
+
+.ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-item-active,
+.ant-menu-dark .ant-menu-submenu-active,
+.ant-menu-dark .ant-menu-submenu-open,
+.ant-menu-dark .ant-menu-submenu-selected,
+.ant-menu-dark .ant-menu-submenu-title:hover {
+    color: #FF7506;
+    background-color: #FFF2E7;
+}
+
+.ant-menu.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub,
+.ant-menu.ant-menu-dark .ant-menu-sub {
+    color: #7E7D88;
+    background: white;
+}
+
+
+/* .ant-menu-vertical .ant-menu-item:not(:last-child),
+.ant-menu-vertical-left .ant-menu-item:not(:last-child),
+.ant-menu-vertical-right .ant-menu-item:not(:last-child),
+.ant-menu-inline .ant-menu-item:not(:last-child) {
+    margin-bottom: 5px;
+} */

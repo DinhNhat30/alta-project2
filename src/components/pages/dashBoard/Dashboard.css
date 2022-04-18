@@ -70,43 +70,6 @@
     clear: both;
 }
 
-.ant-modal-header {
-    padding: 0px 0px;
-    border-radius: 8px;
-}
-
-.ant-modal-content {
-    width: 360px;
-    height: 526px;
-    left: 0px;
-    /* White */
-    background: #FFFFFF;
-    /* Pink shadow */
-    box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
-    border-radius: 10px;
-}
-
-.ant-modal-title {
-    border-radius: 8px;
-}
-
-.ant-modal-body {
-    overflow-y: scroll;
-    padding: 0px 24px;
-}
-
-.ant-modal-body::-webkit-scrollbar {
-    width: 6px;
-}
-
-.ant-modal-body::-webkit-scrollbar-thumb {
-    background: #9c4a06;
-}
-
-.ant-modal-body::-webkit-scrollbar-track {
-    background: #FFC89B;
-}
-
 .Dashboard_Modal {
     opacity: 0.6;
     /* Gray/$-gray-100 */

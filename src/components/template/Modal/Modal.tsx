@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Modal1 from 'react-modal';
 import './Modal.css'
@@ -8,12 +8,39 @@ import avata from '../../../assets/images/avata.png';
 
 const Modal = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
+    const [imageProfile, setImageProfile] = useState<string>('../../../assets/images/thongbao.png');
+    const [statusNotify, setStatusNotify] = useState<boolean>(false); //flasr là đóng true là mở 
+    const [bgNotify, setBgNotify] = useState<string>('#fff2e7');
+    const [colorNotifyBtn, setColorNotifyBtn] = useState<string>('#ff9138')
+    useEffect(() => {
+        // console.log('hinh anh', imageProfile);
+
+    })
+
+    useEffect(() => {
+        if (statusNotify) {
+            setBgNotify('3ff7506');
+            setColorNotifyBtn('#fff');
+        } else {
+            setBgNotify('#fff2e7');
+            setColorNotifyBtn('#ff9138')
+        }
+    }, [statusNotify]);
+
+
 
     return (
         <div>
             <div className='layout_Dashboard_Header_img' onClick={() => setModalIsOpen(true)} >
                 <img src={thongBao} alt="" />
             </div>
+            {/* <div className='layout_Dashboard_Header_img'onClick={() => setModalIsOpen(true)} 
+            >
+                <img src={thongBao} alt=""   style={{ backgroundColor:`${bgNotify}` }}
+            onClick={()=>{
+                setStatusNotify(!statusNotify);
+            }}/>
+            </div> */}
             <Link to={'/thongtinnguoidung'} className='layout_Dashboard_Header_img1'>
                 <img src={avata} alt="" />
             </Link>
@@ -25,7 +52,7 @@ const Modal = () => {
             <Modal1
                 isOpen={modalIsOpen}
                 onRequestClose={() => setModalIsOpen(false)}
-                
+
                 style={{
                     overlay: {
                         position: 'fixed',
@@ -36,21 +63,21 @@ const Modal = () => {
                         backgroundColor: 'rgba(255, 255, 255, 15%)'
                     },
                     content: {
-                        zIndex:'9999',
+                        zIndex: '9999',
                         position: 'absolute',
                         top: '100px',
                         left: '1060px',
-                        border:'none',
+                        border: 'none',
                         width: '360px',
                         height: '526px',
                         padding: '0px',
                         background: '#ffffff',
                         overflow: 'hidden',
-                       
-                        
+
+
                         borderRadius: '10px',
                         outline: 'none',
-                        boxShadow:'2px 2px 15px rgba(70, 64, 67, 0.1)'
+                        boxShadow: '2px 2px 15px rgba(70, 64, 67, 0.1)'
 
                     }
                 }}

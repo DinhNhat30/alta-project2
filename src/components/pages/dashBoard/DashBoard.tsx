@@ -12,6 +12,9 @@ import 'react-calendar/dist/Calendar.css';
 import 'antd/dist/antd.css';
 import { Select } from 'antd';
 import Modal from '../../template/Modal/Modal';
+import DashBoardChartNgay from './dashBoardChart/DashBoardChartNgay';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import { MenuChart } from './MenuChart/MenuChart';
 
 const { Option } = Select;
 
@@ -61,159 +64,159 @@ const DemoRingProgress2 = () => {
 
 const DashBoard = () => {
 
-    
-    const DemoArea = () => {
-        const data = [
-            {
-                "timePeriod": "1",
-                "value": 1000
-            },
-            {
-                "timePeriod": "2",
-                "value": 1080
-            },
-            {
-                "timePeriod": "3",
-                "value": 1170
-            },
-            {
-                "timePeriod": "4",
-                "value": 1260
-            },
-            {
-                "timePeriod": "5",
-                "value": 1340
-            },
-            {
-                "timePeriod": "6",
-                "value": 1410
-            },
-            {
-                "timePeriod": "7",
-                "value": 1520
-            },
-            {
-                "timePeriod": "8",
-                "value": 1670
-            },
-            {
-                "timePeriod": "9",
-                "value": 1840
-            },
-            {
-                "timePeriod": "10",
-                "value": 2070
-            },
-            {
-                "timePeriod": "11",
-                "value": 2390
-            },
-            {
-                "timePeriod": "12",
-                "value": 2710
-            },
-            {
-                "timePeriod": "13",
-                "value": 3030
-            },
-            {
-                "timePeriod": "14",
-                "value": 3330
-            },
-            {
-                "timePeriod": "15",
-                "value": 3500
-            },
-            {
-                "timePeriod": "16",
-                "value": 3370
-            },
-            {
-                "timePeriod": "17",
-                "value": 3150
-            },
-            {
-                "timePeriod": "18",
-                "value": 3010
-            },
-            {
-                "timePeriod": "19",
-                "value": 2800
-            },
-            {
-                "timePeriod": "20",
-                "value": 2800
-            },
-            {
-                "timePeriod": "21",
-                "value": 2840
-            },
-            {
-                "timePeriod": "22",
-                "value": 2750
-            },
-            {
-                "timePeriod": "23",
-                "value": 2640
-            },
-            {
-                "timePeriod": "24",
-                "value": 5550
-            },
-            {
-                "timePeriod": "25",
-                "value": 2460
-            },
-            {
-                "timePeriod": "26",
-                "value": 2450
-            },
-            {
-                "timePeriod": "27",
-                "value": 2570
-            },
-            {
-                "timePeriod": "28",
-                "value": 2680
-            },
-            {
-                "timePeriod": "29",
-                "value": 2800
-            },
-            {
-                "timePeriod": "30",
-                "value": 2890
-            }
 
-        ];
-        const config = {
-            data,
+    // const DemoArea = () => {
+    //     const data = [
+    //         {
+    //             "timePeriod": "1",
+    //             "value": 1000
+    //         },
+    //         {
+    //             "timePeriod": "2",
+    //             "value": 1080
+    //         },
+    //         {
+    //             "timePeriod": "3",
+    //             "value": 1170
+    //         },
+    //         {
+    //             "timePeriod": "4",
+    //             "value": 1260
+    //         },
+    //         {
+    //             "timePeriod": "5",
+    //             "value": 1340
+    //         },
+    //         {
+    //             "timePeriod": "6",
+    //             "value": 1410
+    //         },
+    //         {
+    //             "timePeriod": "7",
+    //             "value": 1520
+    //         },
+    //         {
+    //             "timePeriod": "8",
+    //             "value": 1670
+    //         },
+    //         {
+    //             "timePeriod": "9",
+    //             "value": 1840
+    //         },
+    //         {
+    //             "timePeriod": "10",
+    //             "value": 2070
+    //         },
+    //         {
+    //             "timePeriod": "11",
+    //             "value": 2390
+    //         },
+    //         {
+    //             "timePeriod": "12",
+    //             "value": 2710
+    //         },
+    //         {
+    //             "timePeriod": "13",
+    //             "value": 3030
+    //         },
+    //         {
+    //             "timePeriod": "14",
+    //             "value": 3330
+    //         },
+    //         {
+    //             "timePeriod": "15",
+    //             "value": 3500
+    //         },
+    //         {
+    //             "timePeriod": "16",
+    //             "value": 3370
+    //         },
+    //         {
+    //             "timePeriod": "17",
+    //             "value": 3150
+    //         },
+    //         {
+    //             "timePeriod": "18",
+    //             "value": 3010
+    //         },
+    //         {
+    //             "timePeriod": "19",
+    //             "value": 2800
+    //         },
+    //         {
+    //             "timePeriod": "20",
+    //             "value": 2800
+    //         },
+    //         {
+    //             "timePeriod": "21",
+    //             "value": 2840
+    //         },
+    //         {
+    //             "timePeriod": "22",
+    //             "value": 2750
+    //         },
+    //         {
+    //             "timePeriod": "23",
+    //             "value": 2640
+    //         },
+    //         {
+    //             "timePeriod": "24",
+    //             "value": 5550
+    //         },
+    //         {
+    //             "timePeriod": "25",
+    //             "value": 2460
+    //         },
+    //         {
+    //             "timePeriod": "26",
+    //             "value": 2450
+    //         },
+    //         {
+    //             "timePeriod": "27",
+    //             "value": 2570
+    //         },
+    //         {
+    //             "timePeriod": "28",
+    //             "value": 2680
+    //         },
+    //         {
+    //             "timePeriod": "29",
+    //             "value": 2800
+    //         },
+    //         {
+    //             "timePeriod": "30",
+    //             "value": 2890
+    //         }
 
-            xField: 'timePeriod',
-            yField: 'value',
+    //     ];
+    //     const config = {
+    //         data,
 
-            xAxis: {
-                range: [0, 1],
-                tickCount: 6,
-            },
-            smooth: true,
-            line: {
-                color: '#5185F7',
-                size: 2,
-                height: 400,
-            },
+    //         xField: 'timePeriod',
+    //         yField: 'value',
+
+    //         xAxis: {
+    //             range: [0, 1],
+    //             tickCount: 6,
+    //         },
+    //         smooth: true,
+    //         line: {
+    //             color: '#5185F7',
+    //             size: 2,
+    //             height: 400,
+    //         },
 
 
-            areaStyle: () => {
-                return {
-                    fill: 'l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff',
-                    height: 300,
-                };
-            },
-        };
+    //         areaStyle: () => {
+    //             return {
+    //                 fill: 'l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff',
+    //                 height: 300,
+    //             };
+    //         },
+    //     };
 
-        return <Area {...config} />;
-    };
+    //     return <Area {...config} />;
+    // };
 
 
     return (
@@ -224,8 +227,8 @@ const DashBoard = () => {
                         <p>Dashboard</p>
                     </div>
                     <div className=' layout_Dashboard_Header_HoTen col-4'>
-                        
-                        <Modal/>
+
+                        <Modal />
                     </div>
                     <div className='clear_both'></div>
                 </div>
@@ -290,29 +293,10 @@ const DashBoard = () => {
 
                         </div>
                         <div style={{ padding: "19px 70px", marginLeft: '-25px' }}>
-                            <div className='layout_Dashboard_charts row'>
-                                <div className='layout_Dashboard_charts_Thongke col-6'>
-                                    <div className='layout_Dashboard_charts_Thongke_text'>Bảng thống kê theo ngày </div>
-                                    <div>Tháng 11/2021</div>
-                                </div>
-                                <div style={{ padding: '20px', height: '42px', display: 'block' }} className='col-6'>
-                                    <div className='layout_Dashboard_charts_Thongke_text1'>
-                                        Xem theo
-                                    </div>
-
-                                   
-
-                                    <Select defaultValue="Ngày" style={{ width: 100, marginLeft:'10px' }} >
-                                        <Option className='hoverOption' value="Ngày">Ngày</Option>
-                                        <Option className='hoverOption' value="Tuần">Tuần</Option>
-                                        <Option className='hoverOption' value="Tháng">Tháng</Option>
-                                    </Select>
-
-                                </div>
-                                <div style={{ height: '280px' }}>
-                                    <DemoArea />
-                                </div>
-                            </div>
+                            
+                           <MenuChart/>
+                           <Outlet/>
+                            
                         </div>
                     </div>
                     <div className='col-4 bg-white layout_Dashboard_left'>
@@ -361,9 +345,9 @@ const DashBoard = () => {
                             </div>
                             <div className=''>
                                 <ul className='layout_Dashboard_menu_hoatdong_ul'>
-                                    <li className='layout_Dashboard_menu_hoatdong_ul_li'> <img src="./image/chamxanh.png" alt="" /> Đang sử dụng <strong style={{ color: '#35C75A' }}>3.779</strong></li>
-                                    <li className='layout_Dashboard_menu_hoatdong_ul_li'> <img src="./image/chamxam.png" alt="" /> Đang chờ <strong style={{ marginLeft: '35px', color: '#35C75A' }}>422</strong></li>
-                                    <li className='layout_Dashboard_menu_hoatdong_ul_li'> <img src="./image/chamhong.png" alt="" /> Bỏ qua <strong style={{ marginLeft: '50px', color: '#35C75A' }}>32</strong></li>
+                                    <li className='layout_Dashboard_menu_hoatdong_ul_li'> <img src="./image/chamxanh.png" alt="" /> Đang sử dụng <strong style={{ color: '#35C75A' , marginLeft:'25px'}}>3.779</strong></li>
+                                    <li className='layout_Dashboard_menu_hoatdong_ul_li'> <img src="./image/chamxam.png" alt="" /> Đang chờ <strong style={{ marginLeft: '45px', color: '#35C75A' }}>422</strong></li>
+                                    <li className='layout_Dashboard_menu_hoatdong_ul_li'> <img src="./image/chamhong.png" alt="" /> Bỏ qua <strong style={{ marginLeft: '58px', color: '#35C75A' }}>32</strong></li>
                                 </ul>
 
                             </div>

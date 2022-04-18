@@ -60,6 +60,96 @@ const Capso = () => {
       nguonCap:'Kiosk'
 
     },
+    {
+      id:'1212',
+      tenKhachHang:'Lê Ái Vân',
+      tenDichVu:'khám tim mạch',
+      thoiGianCap:'14:35 - 07/11/2021',
+      hanSuDung:'14:35 - 07/12/2021',
+      trangThai:'Bỏ qua',
+      nguonCap:'Kiosk'
+
+    },
+    {
+      id:'1212',
+      tenKhachHang:'Lê Ái Vân',
+      tenDichVu:'khám tim mạch',
+      thoiGianCap:'14:35 - 07/11/2021',
+      hanSuDung:'14:35 - 07/12/2021',
+      trangThai:'Bỏ qua',
+      nguonCap:'Kiosk'
+
+    },
+    {
+      id:'1212',
+      tenKhachHang:'Lê Ái Vân',
+      tenDichVu:'khám tim mạch',
+      thoiGianCap:'14:35 - 07/11/2021',
+      hanSuDung:'14:35 - 07/12/2021',
+      trangThai:'Bỏ qua',
+      nguonCap:'Kiosk'
+
+    },
+    {
+      id:'1212',
+      tenKhachHang:'Lê Ái Vân',
+      tenDichVu:'khám tim mạch',
+      thoiGianCap:'14:35 - 07/11/2021',
+      hanSuDung:'14:35 - 07/12/2021',
+      trangThai:'Bỏ qua',
+      nguonCap:'Kiosk'
+
+    },
+    {
+      id:'1212',
+      tenKhachHang:'Lê Ái Vân',
+      tenDichVu:'khám tim mạch',
+      thoiGianCap:'14:35 - 07/11/2021',
+      hanSuDung:'14:35 - 07/12/2021',
+      trangThai:'Bỏ qua',
+      nguonCap:'Kiosk'
+
+    },
+    {
+      id:'1212',
+      tenKhachHang:'Lê Ái Vân',
+      tenDichVu:'khám tim mạch',
+      thoiGianCap:'14:35 - 07/11/2021',
+      hanSuDung:'14:35 - 07/12/2021',
+      trangThai:'Bỏ qua',
+      nguonCap:'Kiosk'
+
+    },
+    {
+      id:'1212',
+      tenKhachHang:'Lê Ái Vân',
+      tenDichVu:'khám tim mạch',
+      thoiGianCap:'14:35 - 07/11/2021',
+      hanSuDung:'14:35 - 07/12/2021',
+      trangThai:'Bỏ qua',
+      nguonCap:'Kiosk'
+
+    },
+    {
+      id:'1212',
+      tenKhachHang:'Lê Ái Vân',
+      tenDichVu:'khám tim mạch',
+      thoiGianCap:'14:35 - 07/11/2021',
+      hanSuDung:'14:35 - 07/12/2021',
+      trangThai:'Bỏ qua',
+      nguonCap:'Kiosk'
+
+    },
+    {
+      id:'1212',
+      tenKhachHang:'Lê Ái Vân',
+      tenDichVu:'khám tim mạch',
+      thoiGianCap:'14:35 - 07/11/2021',
+      hanSuDung:'14:35 - 07/12/2021',
+      trangThai:'Bỏ qua',
+      nguonCap:'Kiosk'
+
+    },
     
 
   ];
@@ -143,7 +233,7 @@ const Capso = () => {
       dataIndex: 'chiTiet',
       key: 'chiTiet',
       width: 106,
-      render: () => <a >Chi tiết</a>,
+      render: () => <u style={{ cursor:'pointer', color:'#4277FF'}} >Chi tiết</u>,
     },
   ];
 
@@ -228,7 +318,7 @@ const Capso = () => {
             placeholder="Nhập từ khóa "
             allowClear
             onSearch={onSearch}
-            style={{ width: '100%' }}
+            style={{ width: '93%' }}
           />
         </div>
 
@@ -236,7 +326,7 @@ const Capso = () => {
       <div style={{ clear: 'both' }}></div>
       <div className="row">
         <div style={{ padding: '20px 12px 10px 25px' }} className="col-11">
-          <Table columns={columns} dataSource={data1} style={{ height: '400px' }} />
+          <Table pagination={{ pageSize:8 }} columns={columns} dataSource={data1} style={{ height: '400px' }} />
         </div>
         <div className="col-1 " style={{ padding: '23px 0px' }}>
           <div className='layout_ThietBi_ThemDichVu'>

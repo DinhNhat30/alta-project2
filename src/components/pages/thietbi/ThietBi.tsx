@@ -16,13 +16,20 @@ import { Link } from 'react-router-dom';
 import Modal from '../../template/Modal/Modal';
 
 
+import { Popover, Button } from 'antd';
 
+const content = (
+  <div>
+    <div>khám tim mạch , khám sản - phụ khoa , khám răng hàm mặt </div>
+    <div>khám tai mũi họng , khám hô hấp </div>
+  </div>
+);
 const { Option } = Select;
 const { Search } = Input;
 const onSearch = (value: any) => console.log(value);
 const ThietBi = () => {
 
- 
+
 
   //lấy dữ liêu từ firebase lên 
   const data: ICollection[] = []
@@ -44,7 +51,7 @@ const ThietBi = () => {
 
   //table
   const data1: any = [
-    
+
     {
       address: "192.168.2.0",
       dichVu: "khám tim mạch , khám sản - phụ khoa , khám răng hàm mặt, khám tai mũi họng . khám hô hấp, khám tổng quát ",
@@ -68,22 +75,22 @@ const ThietBi = () => {
       width: 103,
       dataIndex: 'maTB',
       key: 'maTB',
-      
+
     },
     {
       title: 'Tên thiết bị',
       width: 120,
       dataIndex: 'tenTB',
       key: 'tenTB',
-      
+
     },
     {
       title: 'Địa chỉ IP',
       dataIndex: 'address',
       key: 'address',
       width: 138,
-      
-      
+
+
     },
     {
       title: 'Trạng thái hoạt động',
@@ -127,7 +134,7 @@ const ThietBi = () => {
           return (
             <div >
               <img style={{ paddingRight: '5px' }} src="./image/chamluc.png" alt="" />
-                Kết nối
+              Kết nối
             </div>
           )
         }
@@ -138,13 +145,20 @@ const ThietBi = () => {
       dataIndex: 'dichVu',
       key: 'dichVu',
       width: 250,
+      render: () => <div>
+        <div>khám tim mạch , khám măt...</div>
+        <Popover content={content} >
+          <u style={{ cursor:'pointer', color:'#4277FF'}} >xem thêm</u>
+        </Popover>
+
+      </div>
     },
     {
       title: '',
       dataIndex: 'chiTiet',
       key: 'chiTiet',
       width: 77,
-      render: () => <a>Chi tiết</a>,
+      render: () =>  <u style={{ cursor:'pointer', color:'#4277FF'}} >chi tiết</u>,
     },
 
 
@@ -152,9 +166,9 @@ const ThietBi = () => {
       title: '',
       dataIndex: 'capNhat',
       key: 'capNhat',
-     
+
       width: 106,
-      render: () => <a>Cập nhật</a>,
+      render: () =>  <u style={{ cursor:'pointer', color:'#4277FF'}} >Cập nhật</u>,
     },
   ];
 
@@ -173,12 +187,12 @@ const ThietBi = () => {
           </div>
         </div>
         <div className=' layout_Thietbi_Header_HoTen col-4' style={{ background: '#F7F7F7' }}>
-          <Modal/>
+          <Modal />
         </div>
         <div className='clear_both'></div>
       </div>
 
-      
+
       <div className="row layout_ThietBi_row">
         <div className='layout_ThietBi_row_text'> Danh sách thiết bị </div>
       </div>
@@ -221,7 +235,7 @@ const ThietBi = () => {
       </div>
       <div className="row">
         <div style={{ padding: '20px 12px 10px 25px' }} className="col-11">
-          <Table columns={columns} dataSource={data1} style={{ height: '400px' }} />
+          <Table pagination={{ pageSize:8 }} columns={columns} dataSource={data1} style={{ height: '400px' }} />
         </div>
         <div className="col-1 " style={{ padding: '23px 0px' }}>
           <div className='layout_ThietBi_ThemDichVu'>
