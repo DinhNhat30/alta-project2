@@ -166,13 +166,13 @@ const BaoCao = () => {
           <div className='row'>
             <div className="col-5" style={{ paddingRight: '0px' }}>
               <Space direction="vertical">
-                <DatePicker defaultValue={moment('10/10/2021', dateFormatList[0])} format={dateFormatList} />
+                <DatePicker style={{ borderRadius:'8px' }} defaultValue={moment('10/10/2021', dateFormatList[0])} format={dateFormatList} />
               </Space>
             </div>
-            <div className="col-2 text-center"><AiFillCaretRight /></div>
+            <div className="col-2 text-center" style={{ margin:'auto' }}><AiFillCaretRight /></div>
             <div className="col-5" style={{ paddingLeft: '0px' }}>
               <Space direction="vertical">
-                <DatePicker defaultValue={moment('18/10/2021', dateFormatList[0])} format={dateFormatList} />
+                <DatePicker style={{ borderRadius:'8px' }} defaultValue={moment('18/10/2021', dateFormatList[0])} format={dateFormatList} />
               </Space></div>
           </div>
         </div>

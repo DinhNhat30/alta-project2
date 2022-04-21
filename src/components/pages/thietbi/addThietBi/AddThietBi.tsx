@@ -20,7 +20,7 @@ const AddThietBi = () => {
           <div>
             <strong style={{ color: '#7E7D88' }}>Thiết bị </strong>
             <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-            <strong style={{ color: '#7E7D88' }}>Danh sách thiết bị </strong>
+            <Link to='/thietbi' style={{ textDecoration:'none' }}><strong style={{ color: '#7E7D88' }}>Danh sách thiết bị </strong></Link>
             <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
             <strong>Thêm thiết bị </strong>
           </div>
@@ -49,7 +49,7 @@ const AddThietBi = () => {
             className='col-6'
           >
             <div className='layout_addThietBi_row1_FormItem'>Mã thiết bị : <img src="../image/sao.png" alt="" /> </div>
-            <Input placeholder="Nhập mã thiết bị" />
+            <Input style={{ height:'44px' }} placeholder="Nhập mã thiết bị" />
           </Form.Item>
           <Form.Item  className="col-6 layout_addThietBi_row1_FormItem_hover ">
             <div className='layout_addThietBi_row1_FormItem'>Loại thiết bị : <img src="../image/sao.png" alt="" /> </div>
@@ -64,11 +64,11 @@ const AddThietBi = () => {
             className='col-6'
           >
             <div className='layout_addThietBi_row1_FormItem'>Tên thiết bị : <img src="../image/sao.png" alt="" /> </div>
-            <Input placeholder="Nhập tên thiết bị" />
+            <Input style={{ height:'44px' }} placeholder="Nhập tên thiết bị" />
           </Form.Item>
           <Form.Item className="col-6">
             <div className='layout_addThietBi_row1_FormItem'>Tên đăng nhập : <img src="../image/sao.png" alt="" /> </div>
-            <Input placeholder="Nhập tài khoản" />
+            <Input style={{ height:'44px' }} placeholder="Nhập tài khoản" />
           </Form.Item>
         </div>
         <div className="row">
@@ -76,11 +76,11 @@ const AddThietBi = () => {
             className='col-6'
           >
             <div className='layout_addThietBi_row1_FormItem'>Địa chỉ IP : <img src="../image/sao.png" alt="" /> </div>
-            <Input placeholder="Nhập địa chỉ IP" />
+            <Input style={{ height:'44px' }} placeholder="Nhập địa chỉ IP" />
           </Form.Item>
           <Form.Item className="col-6">
             <div className='layout_addThietBi_row1_FormItem'>Mật khẩu : <img src="../image/sao.png" alt="" /> </div>
-            <Input placeholder="Nhập mật khẩu" />
+            <Input style={{ height:'44px' }} placeholder="Nhập mật khẩu" />
           </Form.Item>
         </div>
         <div className="row">
@@ -88,7 +88,7 @@ const AddThietBi = () => {
             className='col-12'
           >
             <div className='layout_addThietBi_row1_FormItem'>Dịch vụ sử dụng  : <img src="../image/sao.png" alt="" /> </div>
-            <Input placeholder="Nhập nhập dịch vụ sử dụng" />
+            <Input style={{ height:'44px' }} placeholder="Nhập nhập dịch vụ sử dụng" />
             <div style={{ marginTop:'8px' }}> <img src="../image/sao.png" alt="" /> Là trường thông tin bắt buộc</div>
           </Form.Item>
 

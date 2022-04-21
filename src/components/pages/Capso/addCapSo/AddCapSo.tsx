@@ -28,7 +28,7 @@ const AddCapSo = () => {
                     <div>
                         <strong style={{ color: '#7E7D88' }}>Cấp số</strong>
                         <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-                        <strong style={{ color: '#7E7D88' }}>Danh sách cấp số</strong>
+                       <Link to='/capso' style={{ textDecoration:'none' }}> <strong style={{ color: '#7E7D88' }}>Danh sách cấp số</strong></Link>
                         <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
                         <strong>Cấp số mới</strong>
                     </div>

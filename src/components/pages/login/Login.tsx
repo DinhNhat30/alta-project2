@@ -20,7 +20,7 @@ const Login = () => {
                     <Input.Password className='login_Layout_Left_form_input' placeholder="" />
                 </Space>
                 <div className='login_Layout_Left_form_2'>
-                    Quên mật khẩu ?
+                    <Link to='/forgot' style={{ textDecoration: 'none', color: '#E73F3F' }}>Quên mật khẩu ?</Link>
                 </div>
                 <Link to={`/`} className='login_Layout_Left_Button'>
                     Đăng nhập

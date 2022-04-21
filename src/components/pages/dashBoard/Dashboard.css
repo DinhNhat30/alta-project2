@@ -190,6 +190,7 @@
     float: left;
     width: 180px;
     text-align: end;
+    margin-top: 10px;
 }
 
 .ant-cascader {

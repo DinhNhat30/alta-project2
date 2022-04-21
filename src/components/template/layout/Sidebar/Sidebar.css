@@ -126,3 +126,11 @@ a:hover {
 .ant-menu-inline .ant-menu-item:not(:last-child) {
     margin-bottom: 5px;
 } */
+
+.ant-menu.ant-menu-dark .ant-menu-submenu-title .ant-menu-submenu-arrow::before {
+    background: #A9A9B0;
+}
+
+.ant-menu.ant-menu-dark .ant-menu-submenu-title .ant-menu-submenu-arrow::after {
+    background: #A9A9B0;
+}

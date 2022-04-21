@@ -1,6 +1,7 @@
 import React from 'react'
 import './Forgot.css'
 import '../login/Login.css'
+import { Link } from 'react-router-dom'
 export const Forgot = () => {
     return (
         <div className='forgot_layout'>
@@ -18,11 +19,16 @@ export const Forgot = () => {
                     <input className='forgot_Layout_Left_input' type="text" />
                 </div>
 
-                   <div className='forgot_Layout_Left_button_group' >
-                   <button className='forgot_Layout_Left_button'>Hủy</button>
-                    <button className='forgot_Layout_Left_button_1'>Tiếp tục</button>
-                   </div>
-                
+                <div className='forgot_Layout_Left_button_group' >
+                    <Link to='/login' style={{ textDecoration: 'none', color: '#FF9138' }}>
+                        <button className='forgot_Layout_Left_button'>
+                            Hủy
+                        </button>
+                    </Link>
+                    <Link to='/reset'>
+                        <button className='forgot_Layout_Left_button_1'>Tiếp tục</button>
+                    </Link>
+                </div>
             </div>
             <div className='forgot_Layout_Right'>
                 <img className='forgot_Layout_Right_img' src="./image/Frame.png" alt="" />

@@ -28,11 +28,11 @@ const Dichvu = () => {
 
     {
       moTa: "Hoạt động 1",
-      
+
       id: "KIO_01",
       tenDichVu: "kiosk",
       trangThaiHD: "Hoạt động",
-     
+
     },
     {
       moTa: "Hoạt động 2",
@@ -61,7 +61,7 @@ const Dichvu = () => {
       tenDichVu: "kiosk2",
       trangThaiHD: "Ngưng hoạt động",
     }
-    
+
   ];
   const columns: any = [
     {
@@ -69,14 +69,14 @@ const Dichvu = () => {
       width: 103,
       dataIndex: 'id',
       key: 'id',
-      
+
     },
     {
       title: 'Tên dịch vụ',
       width: 120,
       dataIndex: 'tenDichVu',
       key: 'tenDichVu',
-      
+
     },
     {
       title: 'Mô tả',
@@ -108,13 +108,13 @@ const Dichvu = () => {
         }
       }
     },
-    
+
     {
       title: '',
       dataIndex: 'chiTiet',
       key: 'chiTiet',
       width: 77,
-      render: () => <u style={{ cursor:'pointer', color:'#4277FF'}}>Chi tiết</u>,
+      render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }}>Chi tiết</u>,
     },
 
 
@@ -123,7 +123,7 @@ const Dichvu = () => {
       dataIndex: 'capNhat',
       key: 'capNhat',
       width: 106,
-      render: () => <u style={{ cursor:'pointer', color:'#4277FF'}} >Cập nhật</u>,
+      render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }} >Cập nhật</u>,
     },
   ];
 
@@ -140,12 +140,12 @@ const Dichvu = () => {
           </div>
         </div>
         <div className=' layout_Thietbi_Header_HoTen col-4' style={{ background: '#F7F7F7' }}>
-          <Modal/>
+          <Modal />
         </div>
         <div className='clear_both'></div>
       </div>
 
-      
+
       <div className="row layout_ThietBi_row">
         <div className='layout_ThietBi_row_text'> Quản lý dịch vụ</div>
       </div>
@@ -163,17 +163,16 @@ const Dichvu = () => {
         </div>
         <div className="col-3">
           <div className='layout_ThietBi_row1_text'>Chọn thời gian </div>
-          <div className='row'>
-            <div className="col-5" style={{ paddingRight:'0px' }}>
-              <Space direction="vertical">
-                <DatePicker defaultValue={moment('10/10/2021', dateFormatList[0])} format={dateFormatList} />
-              </Space>
-            </div>
-            <div className="col-2 text-center"><AiFillCaretRight /></div>
-            <div className="col-5" style={{ paddingLeft:'0px' }}>
-              <Space direction="vertical">
-                <DatePicker defaultValue={moment('18/10/2021', dateFormatList[0])} format={dateFormatList} />
-              </Space></div>
+          <div className='' style={{ display:'block' , width:'338px' }}>
+
+            <Space direction="vertical" >
+              <DatePicker style={{ borderRadius: '8px' }} defaultValue={moment('10/10/2021', dateFormatList[0])} format={dateFormatList} />
+            </Space>
+            <AiFillCaretRight style={{ margin:'0px 7.5px' }} />
+
+            <Space direction="vertical">
+              <DatePicker style={{ borderRadius: '8px' }} defaultValue={moment('18/10/2021', dateFormatList[0])} format={dateFormatList} />
+            </Space>
           </div>
         </div>
         <div className="col-2">

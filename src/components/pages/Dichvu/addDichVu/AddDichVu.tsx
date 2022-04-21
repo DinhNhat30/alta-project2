@@ -5,10 +5,11 @@ import './AddDichVu.css'
 import { Checkbox } from 'antd';
 import { InputNumber } from 'antd';
 import Modal from '../../../template/Modal/Modal';
+import { Link } from 'react-router-dom';
 
 
-function onChange1(value:any) {
-  console.log('changed', value);
+function onChange1(value: any) {
+    console.log('changed', value);
 }
 
 function onChange(e: any) {
@@ -19,7 +20,7 @@ const { TextArea } = Input;
 const { Option } = Select;
 
 const AddDichVu = () => {
-    
+
 
     const [form] = Form.useForm();
     return (
@@ -29,18 +30,18 @@ const AddDichVu = () => {
                     <div>
                         <strong style={{ color: '#7E7D88' }}>Dịch vụ </strong>
                         <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-                        <strong style={{ color: '#7E7D88' }}>Danh sách dịch vụ </strong>
+                        <Link to='/dichvu' style={{ textDecoration: 'none' }} ><strong style={{ color: '#7E7D88' }}>Danh sách dịch vụ </strong></Link>
                         <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
                         <strong>Thêm dịch vụ </strong>
                     </div>
                 </div>
                 <div className=' layout_AddThietbi_Header_HoTen col-4' style={{ background: '#F7F7F7' }}>
-                    <Modal/>
+                    <Modal />
                 </div>
                 <div className='clear_both'></div>
             </div>
 
-            
+
             <div className="row layout_AddThietBi_row">
                 <div className='layout_AddThietBi_row_text'> Quản lý dịch vụ </div>
             </div>
@@ -58,14 +59,14 @@ const AddDichVu = () => {
                         className='col-6'
                     >
                         <div className='layout_addThietBi_row1_FormItem'>Mã dịch vụ : <img src="../image/sao.png" alt="" /> </div>
-                        <Input placeholder="" />
+                        <Input style={{ height:'44px' }} />
 
                         <div style={{ marginTop: '8px' }} className='layout_addThietBi_row1_FormItem'>Tên dịch vụ : <img src="../image/sao.png" alt="" /> </div>
-                        <Input placeholder="khám tim mạch" />
+                        <Input style={{ height:'44px' }} placeholder="khám tim mạch" />
                     </Form.Item>
                     <Form.Item className="col-6 layout_addThietBi_row1_FormItem_hover ">
                         <div className='layout_addThietBi_row1_FormItem'>Mô tả : <img src="../image/sao.png" alt="" /> </div>
-                        <TextArea style={{ height:'106px' }} placeholder="Mô tả dịch vụ" />
+                        <TextArea style={{ height: '130px' }} placeholder="Mô tả dịch vụ" />
                     </Form.Item>
                 </div>
                 <div className="row">
@@ -74,29 +75,33 @@ const AddDichVu = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div style={{ padding:'10px 10px' }} className="col-12">
-                        <Checkbox  onChange={onChange}>Tăng tự động :</Checkbox>
-                        <InputNumber style={{ marginLeft:'10px' }}   defaultValue={1} onChange={onChange1} />
-                        <strong style={{ marginLeft:'10px', marginRight:'10px' }}>đến</strong>
-                        <InputNumber   defaultValue={9999} onChange={onChange1} />
+                    <div style={{ padding: '10px 10px' }} className="col-2">
+                        <Checkbox onChange={onChange}>Tăng tự động từ :</Checkbox>
+                    </div>
+                    <div className="col-10" style={{ paddingLeft: '0px', marginTop: '13px' }}>
+                        <InputNumber defaultValue={1} onChange={onChange1} />
+                        <strong style={{ marginLeft: '10px', marginRight: '10px' }}>đến</strong>
+                        <InputNumber defaultValue={9999} onChange={onChange1} />
                     </div>
                 </div>
                 <div className="row">
-                    <div style={{ paddingBottom:' 10px' }} className="col-12">
+                    <div style={{ paddingBottom: ' 10px' }} className="col-2">
                         <Checkbox onChange={onChange}>Prefix :</Checkbox>
-                        <InputNumber style={{ marginLeft:'58px' }}  defaultValue={1} onChange={onChange1} />
-                        
+                    </div>
+                    <div className="col-10" style={{ paddingLeft: '0px', marginTop: '0px' }}>
+                        <InputNumber defaultValue={1} onChange={onChange1} />
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-12 " style={{ paddingBottom:' 10px' }}>
+                    <div className="col-2 " style={{ paddingBottom: ' 10px' }}>
                         <Checkbox onChange={onChange}>Surfix :</Checkbox>
-                        <InputNumber style={{ marginLeft:'58px' }}  defaultValue={1} onChange={onChange1} />
-                        
+                    </div>
+                    <div className="col-10" style={{ paddingLeft: '0px', marginTop: '0px' }}>
+                        <InputNumber defaultValue={1} onChange={onChange1} />
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-12" style={{ paddingBottom:' 10px' }}>
+                    <div className="col-12" >
                         <Checkbox onChange={onChange}>Reset mỗi ngày </Checkbox>
                     </div>
                 </div>

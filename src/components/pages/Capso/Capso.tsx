@@ -31,126 +31,126 @@ const Capso = () => {
   const data1: any = [
 
     {
-      id:'1212',
-      tenKhachHang:'Lê Huỳnh Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Đang chờ',
-      nguonCap:'Kiosk'
+      id: '1212',
+      tenKhachHang: 'Lê Huỳnh Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Đang chờ',
+      nguonCap: 'Kiosk'
 
     },
     {
-      id:'1213',
-      tenKhachHang:'Huỳnh Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Đã sử dụng',
-      nguonCap:'Kiosk'
+      id: '1213',
+      tenKhachHang: 'Huỳnh Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Đã sử dụng',
+      nguonCap: 'Kiosk'
 
     },
     {
-      id:'1212',
-      tenKhachHang:'Lê Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Bỏ qua',
-      nguonCap:'Kiosk'
+      id: '1212',
+      tenKhachHang: 'Lê Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Bỏ qua',
+      nguonCap: 'Kiosk'
 
     },
     {
-      id:'1212',
-      tenKhachHang:'Lê Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Bỏ qua',
-      nguonCap:'Kiosk'
+      id: '1212',
+      tenKhachHang: 'Lê Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Bỏ qua',
+      nguonCap: 'Kiosk'
 
     },
     {
-      id:'1212',
-      tenKhachHang:'Lê Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Bỏ qua',
-      nguonCap:'Kiosk'
+      id: '1212',
+      tenKhachHang: 'Lê Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Bỏ qua',
+      nguonCap: 'Kiosk'
 
     },
     {
-      id:'1212',
-      tenKhachHang:'Lê Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Bỏ qua',
-      nguonCap:'Kiosk'
+      id: '1212',
+      tenKhachHang: 'Lê Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Bỏ qua',
+      nguonCap: 'Kiosk'
 
     },
     {
-      id:'1212',
-      tenKhachHang:'Lê Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Bỏ qua',
-      nguonCap:'Kiosk'
+      id: '1212',
+      tenKhachHang: 'Lê Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Bỏ qua',
+      nguonCap: 'Kiosk'
 
     },
     {
-      id:'1212',
-      tenKhachHang:'Lê Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Bỏ qua',
-      nguonCap:'Kiosk'
+      id: '1212',
+      tenKhachHang: 'Lê Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Bỏ qua',
+      nguonCap: 'Kiosk'
 
     },
     {
-      id:'1212',
-      tenKhachHang:'Lê Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Bỏ qua',
-      nguonCap:'Kiosk'
+      id: '1212',
+      tenKhachHang: 'Lê Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Bỏ qua',
+      nguonCap: 'Kiosk'
 
     },
     {
-      id:'1212',
-      tenKhachHang:'Lê Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Bỏ qua',
-      nguonCap:'Kiosk'
+      id: '1212',
+      tenKhachHang: 'Lê Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Bỏ qua',
+      nguonCap: 'Kiosk'
 
     },
     {
-      id:'1212',
-      tenKhachHang:'Lê Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Bỏ qua',
-      nguonCap:'Kiosk'
+      id: '1212',
+      tenKhachHang: 'Lê Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Bỏ qua',
+      nguonCap: 'Kiosk'
 
     },
     {
-      id:'1212',
-      tenKhachHang:'Lê Ái Vân',
-      tenDichVu:'khám tim mạch',
-      thoiGianCap:'14:35 - 07/11/2021',
-      hanSuDung:'14:35 - 07/12/2021',
-      trangThai:'Bỏ qua',
-      nguonCap:'Kiosk'
+      id: '1212',
+      tenKhachHang: 'Lê Ái Vân',
+      tenDichVu: 'khám tim mạch',
+      thoiGianCap: '14:35 - 07/11/2021',
+      hanSuDung: '14:35 - 07/12/2021',
+      trangThai: 'Bỏ qua',
+      nguonCap: 'Kiosk'
 
     },
-    
+
 
   ];
   const columns: any = [
@@ -224,7 +224,7 @@ const Capso = () => {
       dataIndex: 'nguonCap',
       key: 'nguonCap',
       width: 120,
-      
+
     },
 
 
@@ -233,7 +233,7 @@ const Capso = () => {
       dataIndex: 'chiTiet',
       key: 'chiTiet',
       width: 106,
-      render: () => <u style={{ cursor:'pointer', color:'#4277FF'}} >Chi tiết</u>,
+      render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }} >Chi tiết</u>,
     },
   ];
 
@@ -297,21 +297,21 @@ const Capso = () => {
         </div>
         <div style={{ width: '340px' }} className="">
           <div className='layout_ThietBi_row1_text'>Chọn thời gian </div>
-          <div className='row'>
-            <div className="col-5" style={{ paddingRight: '0px' }}>
-              <Space direction="vertical">
-                <DatePicker defaultValue={moment('10/10/2021', dateFormatList[0])} format={dateFormatList} />
-              </Space>
-            </div>
-            <div className="col-2 text-center"><AiFillCaretRight /></div>
-            <div className="col-5" style={{ paddingLeft: '0px' }}>
-              <Space direction="vertical">
-                <DatePicker defaultValue={moment('18/10/2021', dateFormatList[0])} format={dateFormatList} />
-              </Space></div>
-          </div>
+          <div style={{ display: 'block', width: '338px' }}>
+
+            <Space direction="vertical">
+              <DatePicker style={{ borderRadius: '8px' }} defaultValue={moment('10/10/2021', dateFormatList[0])} format={dateFormatList} />
+            </Space>
+
+            <AiFillCaretRight style={{ margin: '0px 7.5px' }} />
+
+            <Space direction="vertical">
+              <DatePicker style={{ borderRadius: '8px' }} defaultValue={moment('18/10/2021', dateFormatList[0])} format={dateFormatList} />
+            </Space></div>
+
         </div>
 
-        <div style={{ width: '281px', float: 'left' }} className="">
+        <div style={{ width: '281px', float: 'left',  }} >
           <div className='layout_ThietBi_row1_text'>Từ khóa  </div>
           <Search
 
@@ -326,7 +326,7 @@ const Capso = () => {
       <div style={{ clear: 'both' }}></div>
       <div className="row">
         <div style={{ padding: '20px 12px 10px 25px' }} className="col-11">
-          <Table pagination={{ pageSize:8 }} columns={columns} dataSource={data1} style={{ height: '400px' }} />
+          <Table pagination={{ pageSize: 8 }} columns={columns} dataSource={data1} style={{ height: '400px' }} />
         </div>
         <div className="col-1 " style={{ padding: '23px 0px' }}>
           <div className='layout_ThietBi_ThemDichVu'>

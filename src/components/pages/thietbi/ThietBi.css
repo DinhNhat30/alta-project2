@@ -93,6 +93,9 @@
     color: #FF7506;
     border-left: none;
     background: white;
+    height: 44px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .layout_ThietBi_row1_text {
@@ -170,4 +173,72 @@
     cursor: pointer;
     font-size: 14px;
     text-align: center;
+}
+
+.ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.layout_table_dataIndex {
+    width: 250px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ant-table-thead>tr>th,
+.ant-table-tbody>tr>td,
+.ant-table tfoot>tr>th,
+.ant-table tfoot>tr>td {
+    position: relative;
+    padding: 13px 10px;
+    overflow-wrap: break-word;
+}
+
+.ant-popover-inner {
+    width: 380px !important;
+    height: 50px;
+    border: 1px solid #FFC89B;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 8px;
+}
+
+.ant-popover-arrow {
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    background: transparent;
+    pointer-events: none;
+}
+
+.ant-popover-arrow-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 0px;
+    height: 3px;
+    margin: auto;
+    background-color: none;
+    content: none;
+    pointer-events: auto;
+    border-radius: 0 0 2px 0;
+    pointer-events: none;
+}
+
+.ant-popover-inner-content {
+    padding: 4px 8px;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.ant-popover-placement-top,
+.ant-popover-placement-topLeft,
+.ant-popover-placement-topRight {
+    padding-bottom: 0px !important;
 }

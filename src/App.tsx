@@ -23,6 +23,12 @@ import DashBoardChartNgay from './components/pages/dashBoard/dashBoardChart/Dash
 import DashBoardChartTuan from './components/pages/dashBoard/dashBoardChart/DashBoardChartTuan';
 import DashBoardChartThang from './components/pages/dashBoard/dashBoardChart/DashBoardChartThang';
 import QuanLyVaiTro from './components/pages/quanLyVaiTro/QuanLyVaiTro';
+import AddVaiTro from './components/pages/quanLyVaiTro/addVaiTro/AddVaiTro';
+import QuanLyTaiKhoan from './components/pages/quanLyTaiKhoan/QuanLyTaiKhoan';
+import AddTaiKhoan from './components/pages/quanLyTaiKhoan/addTaiKhoan/AddTaiKhoan';
+import NhatKyNguoiDung from './components/pages/nhatKyNguoiDung/NhatKyNguoiDung';
+import DetailThietBi from './components/pages/thietbi/detailThietBi/DetailThietBi';
+import UpdateThietBi from './components/pages/thietbi/updateThietBi/UpdateThietBi';
 export const history = createBrowserHistory();
 
 
@@ -35,9 +41,10 @@ const App: React.FunctionComponent = () => {
       <Routes>
         <Route path='/' element={<Menu />} >
           <Route path='/' element={<DashBoard />} >
-            <Route path='/'  element={<DashBoardChartNgay/>} />  
-            <Route path='/1'  element={<DashBoardChartTuan/>} />  
-            <Route path='/2'  element={<DashBoardChartThang/>} />  
+            <Route path='/' element={<DashBoardChartNgay />} />
+            <Route path='/1' element={<DashBoardChartTuan />} />
+            <Route path='/2' element={<DashBoardChartThang />} />
+            
           </Route>
           <Route path='/thietbi' element={<ThietBi />} />
           <Route path='/dichvu' element={<Dichvu />} />
@@ -45,10 +52,17 @@ const App: React.FunctionComponent = () => {
           <Route path='/baocao' element={<BaoCao />} />
           <Route path='/hethong' element={<HeThong />} />
           <Route path='/thietbi/themthietbi' element={<AddThietBi />} />
+          <Route path='/thietbi/detailthietbi' element={<DetailThietBi />} />
+          <Route path='/thietbi/capnhatthietbi' element={<UpdateThietBi />} />
           <Route path='/dichvu/themdichvu' element={<AddDichVu />} />
           <Route path='/thongtinnguoidung' element={<ThongTinNguoiDung />} />
           <Route path='/capso/capsomoi' element={<AddCapSo />} />
           <Route path='/quanlyvaitro' element={<QuanLyVaiTro />} />
+          <Route path='/quanlyvaitro/themvaitro' element={<AddVaiTro />} />
+          <Route path='/quanlytaikhoan' element={<QuanLyTaiKhoan />} />
+          <Route path='/quanlytaikhoan/themtaikhoan' element={<AddTaiKhoan />} />
+          <Route path='/nhatkynguoidung' element={<NhatKyNguoiDung />} />
+         
 
           {/* no other router match */}
           <Route path='*' element={<NotFound />} />

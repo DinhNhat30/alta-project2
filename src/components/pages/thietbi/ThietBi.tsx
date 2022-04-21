@@ -14,22 +14,18 @@ import { db } from '../../../firebase/config';
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import Modal from '../../template/Modal/Modal';
-
+import Modal2 from 'react-modal';
 
 import { Popover, Button } from 'antd';
 
-const content = (
-  <div>
-    <div>khám tim mạch , khám sản - phụ khoa , khám răng hàm mặt </div>
-    <div>khám tai mũi họng , khám hô hấp </div>
-  </div>
-);
+
 const { Option } = Select;
 const { Search } = Input;
 const onSearch = (value: any) => console.log(value);
 const ThietBi = () => {
 
-
+  //modal
+  const [modalIsOpen, setModalIsOpen] = useState(false)
 
   //lấy dữ liêu từ firebase lên 
   const data: ICollection[] = []
@@ -48,7 +44,7 @@ const ThietBi = () => {
     }
     getData()
   }, [])
-
+  
   //table
   const data1: any = [
 
@@ -145,12 +141,13 @@ const ThietBi = () => {
       dataIndex: 'dichVu',
       key: 'dichVu',
       width: 250,
-      render: () => <div>
-        <div>khám tim mạch , khám măt...</div>
-        <Popover content={content} >
-          <u style={{ cursor:'pointer', color:'#4277FF'}} >xem thêm</u>
-        </Popover>
+      
+      render: (dataIndex: any) => <div>
+        <div className='layout_table_dataIndex'>{dataIndex}</div>
 
+        <Popover content={dataIndex} trigger="click" placement="topLeft" >
+          <u style={{ cursor: 'pointer', color: '#4277FF' }}  >xem thêm</u>
+        </Popover>
       </div>
     },
     {
@@ -158,7 +155,9 @@ const ThietBi = () => {
       dataIndex: 'chiTiet',
       key: 'chiTiet',
       width: 77,
-      render: () =>  <u style={{ cursor:'pointer', color:'#4277FF'}} >chi tiết</u>,
+      render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }} >
+        <Link to='/thietbi/detailthietbi' style={{ textDecoration: 'none' }}>chi tiết</Link>
+      </u>,
     },
 
 
@@ -168,7 +167,9 @@ const ThietBi = () => {
       key: 'capNhat',
 
       width: 106,
-      render: () =>  <u style={{ cursor:'pointer', color:'#4277FF'}} >Cập nhật</u>,
+      render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }} >
+         <Link to='/thietbi/capnhatthietbi' style={{ textDecoration: 'none' }}>cập nhật</Link>  
+      </u>,
     },
   ];
 
@@ -235,7 +236,7 @@ const ThietBi = () => {
       </div>
       <div className="row">
         <div style={{ padding: '20px 12px 10px 25px' }} className="col-11">
-          <Table pagination={{ pageSize:8 }} columns={columns} dataSource={data1} style={{ height: '400px' }} />
+          <Table pagination={{ pageSize: 8 }} columns={columns} dataSource={data1} style={{ height: '400px' }} />
         </div>
         <div className="col-1 " style={{ padding: '23px 0px' }}>
           <div className='layout_ThietBi_ThemDichVu'>
