@@ -12,12 +12,14 @@ import 'react-calendar/dist/Calendar.css';
 import 'antd/dist/antd.css';
 import { Select } from 'antd';
 import Modal from '../../template/Modal/Modal';
-import DashBoardChartNgay from './dashBoardChart/DashBoardChartNgay';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import { MenuChart } from './MenuChart/MenuChart';
 import { Link } from 'react-router-dom';
+import { RadialBar } from '@ant-design/plots';
 
 const { Option } = Select;
+
+
 
 type DemoRingProgressProps = {
     daCap: number
@@ -180,6 +182,7 @@ const DashBoard = () => {
                             <Link to='/thietbi' style={{ textDecoration: 'none' }}>
                                 <div className='layout_Dashboard_menu_charts' >
                                     <DemoRingProgress daCap={daCap} daCapHD={daCapHD} />
+                                    
                                 </div>
                                 <div className='layout_Dashboard_menu_Thongso'>
                                     <div className='layout_Dashboard_menu_Thongso_text'>{daCap}</div>

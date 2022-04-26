@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineRight } from 'react-icons/ai';
 import { Form, Modal, message, Button, Select } from 'antd';
 import { Link } from 'react-router-dom';
 import Modal1 from '../../../template/Modal/Modal';
 import './AddCapSo.css';
+import { capSoProps } from '../../../../types/capSo.types';
 
 
 const { Option } = Select;
@@ -11,14 +12,25 @@ function handleChange(value: any) {
     console.log(`selected ${value}`);
 }
 
-const AddCapSo = () => {
+const AddCapSo = (props: capSoProps) => {
     const [form] = Form.useForm();
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const showModal = () => {
         setIsModalVisible(true);
     };
+    //select dropdown 
+  const [select,setSelect] = useState<boolean>(false)
+  const [selectUp,setSelectUp] = useState<string>('fa fa-caret-down')
 
+  useEffect(() =>{
+    if(select){
+      setSelectUp('fa fa-caret-up')
+    }
+    else{
+      setSelectUp('fa fa-caret-down')
+    }
+  },[select])
 
 
     return (
@@ -28,9 +40,9 @@ const AddCapSo = () => {
                     <div>
                         <strong style={{ color: '#7E7D88' }}>Cấp số</strong>
                         <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-                       <Link to='/capso' style={{ textDecoration:'none' }}> <strong style={{ color: '#7E7D88' }}>Danh sách cấp số</strong></Link>
+                       <Link to='/capso' style={{ textDecoration:'none' }}> <strong style={{ color: '#7E7D88' }}>{props.name.danhSach} </strong></Link>
                         <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-                        <strong>Cấp số mới</strong>
+                        <strong>{props.name.capSo} </strong>
                     </div>
                 </div>
                 <div className=' layout_AddThietbi_Header_HoTen col-4' style={{ background: '#F7F7F7' }}>
@@ -56,10 +68,9 @@ const AddCapSo = () => {
                     Dịch vụ khách hàng lựa chọn
                 </div>
                 <div className='layout_AddCapSo_Form_Select' >
-                    <Select defaultValue="Chọn dịch vụ" style={{ width: '100%', marginLeft: '352px', marginTop: '15px' }} onChange={handleChange}>
+                    <Select defaultValue="Chọn dịch vụ" style={{ width: '100%', marginLeft: '352px', marginTop: '15px' }} onClick={() =>{setSelect(!select)}} suffixIcon={<i className={selectUp} style={{ fontSize:'25px' }}></i>} onChange={handleChange}>
                         <Option className="layout_AddCapSo_Form_Select_option" value="Khám tim mạch">Khám tim mạch</Option>
                         <Option className="layout_AddCapSo_Form_Select_option" value="khám sản - phụ khoa">khám sản - phụ khoa</Option>
-
                         <Option className="layout_AddCapSo_Form_Select_option" value="khám răng hàm mặt">khám răng hàm mặt</Option>
                         <Option className="layout_AddCapSo_Form_Select_option" value="khám tai mũi họng">khám tai mũi họng</Option>
                     </Select>

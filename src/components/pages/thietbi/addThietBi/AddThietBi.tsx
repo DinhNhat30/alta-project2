@@ -1,18 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineRight } from 'react-icons/ai';
 import './AddThietBi.css';
 import { Form, Input, message, Button, Select } from 'antd';
 import { Link } from 'react-router-dom';
 import Modal from '../../../template/Modal/Modal';
+import { DashboardProps } from '../../../../types/thietBi.types';
 
 const { Option } = Select;
 
 
-const AddThietBi = () => {
-
+const AddThietBi = (props:DashboardProps) => {
   const [form] = Form.useForm();
+  //select dropdown 
+  const [select,setSelect] = useState<boolean>(false)
+  const [selectUp,setSelectUp] = useState<string>('fa fa-caret-down')
 
-
+  useEffect(() =>{
+    if(select){
+      setSelectUp('fa fa-caret-up')
+    }
+    else{
+      setSelectUp('fa fa-caret-down')
+    }
+  },[select])
   return (
     <div className='layout_AddThietBi'>
       <div className='layout_AddThietbi_Header row' >
@@ -20,9 +30,9 @@ const AddThietBi = () => {
           <div>
             <strong style={{ color: '#7E7D88' }}>Thiết bị </strong>
             <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-            <Link to='/thietbi' style={{ textDecoration:'none' }}><strong style={{ color: '#7E7D88' }}>Danh sách thiết bị </strong></Link>
+            <Link to='/thietbi' style={{ textDecoration:'none' }}><strong style={{ color: '#7E7D88' }}>{props.name.thietBi} </strong></Link>
             <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-            <strong>Thêm thiết bị </strong>
+            <strong>{props.name.them} </strong>
           </div>
         </div>
         <div className=' layout_AddThietbi_Header_HoTen col-4' style={{ background: '#F7F7F7' }}>
@@ -53,7 +63,7 @@ const AddThietBi = () => {
           </Form.Item>
           <Form.Item  className="col-6 layout_addThietBi_row1_FormItem_hover ">
             <div className='layout_addThietBi_row1_FormItem'>Loại thiết bị : <img src="../image/sao.png" alt="" /> </div>
-            <Select placeholder="Chọn loại thiết bị">
+            <Select placeholder="Chọn loại thiết bị" onClick={() =>{setSelect(!select)}} suffixIcon={<i className={selectUp} style={{ fontSize:'25px' }}></i>}>
               <Option  className='layout_addThietBi_row1_Option_hover' value="Kiosk">Kiosk</Option>
               <Option  className='layout_addThietBi_row1_Option_hover'value="Display Counter">Display Counter</Option>
             </Select>

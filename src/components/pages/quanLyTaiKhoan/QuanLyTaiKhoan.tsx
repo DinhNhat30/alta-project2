@@ -7,7 +7,7 @@ import { Select } from 'antd';
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import Modal from '../../template/Modal/Modal';
-
+import Vector from '../../../assets/images/Vector.png'
 
 
 
@@ -163,9 +163,23 @@ const QuanLyTaiKhoan = () => {
             key: 'capNhat',
 
             width: 106,
-            render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }} >Cập nhật</u>,
+            render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }} >
+                    <Link to="/quanlytaikhoan/updatetaikhoan" style={{ textDecoration:'none' }} >Cập nhật</Link>
+                </u>,
         },
     ];
+    //select dropdown 
+  const [select,setSelect] = useState<boolean>(false)
+  const [selectUp,setSelectUp] = useState<string>('fa fa-caret-down')
+
+  useEffect(() =>{
+    if(select){
+      setSelectUp('fa fa-caret-up')
+    }
+    else{
+      setSelectUp('fa fa-caret-down')
+    }
+  },[select])
     return (
         <div className='layout_ThietBi'>
             <div className='layout_Thietbi_Header row' >
@@ -190,7 +204,7 @@ const QuanLyTaiKhoan = () => {
                 <div className="col-3">
                     <div className='layout_ThietBi_row1_text'>Tên vai trò </div>
                     <div>
-                        <Select defaultValue="Tất cả" style={{ width: '100%' }} >
+                        <Select defaultValue="Tất cả" style={{ width: '100%' }} onClick={() =>{setSelect(!select)}} suffixIcon={<i className={selectUp} style={{ fontSize:'25px' }}></i>} >
                             <Option className='hoverOption' value="Tất cả">Tất cả</Option>
                             <Option className='hoverOption' value="Hoạt động">Hoạt động</Option>
                             <Option className='hoverOption' value="Ngưng hoạt động">Ngưng hoạt động</Option>

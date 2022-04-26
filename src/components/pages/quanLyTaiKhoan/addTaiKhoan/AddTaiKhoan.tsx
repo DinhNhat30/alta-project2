@@ -1,24 +1,43 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineRight } from 'react-icons/ai';
 import { Form, Input, Button, Select } from 'antd';
 import Modal from '../../../template/Modal/Modal';
 import sao from '../../../../assets/images/sao.png';
 import { Link } from 'react-router-dom';
 import './AddTaiKhoan.css'
-
+import Vector from '../../../../assets/images/Vector.png'
 const { Option } = Select;
 
 function handleChange(value: any) {
     console.log(`selected ${value}`);
 }
-
-
 const { TextArea } = Input;
-
-
 const AddTaiKhoan = () => {
-
     const [form] = Form.useForm();
+    //select dropdown 
+  const [select,setSelect] = useState<boolean>(false)
+  const [selectUp,setSelectUp] = useState<string>('fa fa-caret-down')
+
+  useEffect(() =>{
+    if(select){
+      setSelectUp('fa fa-caret-up')
+    }
+    else{
+      setSelectUp('fa fa-caret-down')
+    }
+  },[select])
+  //select dropdown 
+  const [select1,setSelect1] = useState<boolean>(false)
+  const [selectUp1,setSelectUp1] = useState<string>('fa fa-caret-down')
+
+  useEffect(() =>{
+    if(select1){
+      setSelectUp1('fa fa-caret-up')
+    }
+    else{
+      setSelectUp1('fa fa-caret-down')
+    }
+  },[select1])
     return (
         <div className='layout_AddThietBi'>
             <div className='layout_AddThietbi_Header row' >
@@ -37,7 +56,7 @@ const AddTaiKhoan = () => {
                 <div className='clear_both'></div>
             </div>
             <div className="row layout_AddThietBi_row">
-                <div className='layout_AddThietBi_row_text'> Danh sách vai trò </div>
+                <div className='layout_AddThietBi_row_text'>Quản lý tài khoản </div>
             </div>
             <Form
                 form={form}
@@ -64,7 +83,7 @@ const AddTaiKhoan = () => {
                         <div className='layout_addVaiTro_form_left_text_1'>
                             Vai trò <img style={{ marginLeft: '5px' }} src={sao} />
                         </div>
-                        <Select defaultValue="Chọn vai trò" style={{ width: '100%', fontSize: '16px', marginTop: '8px' }} onChange={handleChange}>
+                        <Select defaultValue="Chọn vai trò" style={{ width: '100%', fontSize: '16px', marginTop: '8px' }} onChange={handleChange} onClick={() =>{setSelect(!select)}} suffixIcon={<i className={selectUp} style={{ fontSize:'25px' }}></i>}  >
                             <Option value="ketoan">Kế toán</Option>
                             <Option value="bacsi">Bác sĩ</Option>
                             <Option value="letan">Lễ tân</Option>
@@ -89,7 +108,7 @@ const AddTaiKhoan = () => {
                         <div className='layout_addVaiTro_form_left_text_1' style={{ marginTop:'17px' }}>
                             Tình trạng <img style={{ marginLeft: '5px' }} src={sao} />
                         </div>
-                        <Select defaultValue="Hoạt động" style={{ width: '100%', fontSize: '16px', marginTop: '8px' }} onChange={handleChange}>
+                        <Select defaultValue="Hoạt động" style={{ width: '100%', fontSize: '16px', marginTop: '8px' }} onChange={handleChange} onClick={() =>{setSelect1(!select1)}} suffixIcon={<i className={selectUp1} style={{ fontSize:'25px' }}></i>}>
                             <Option value="hoatdong">Hoạt động</Option>
                             <Option value="ngunghoatdong">Ngưng hoạt động</Option>
                         </Select>

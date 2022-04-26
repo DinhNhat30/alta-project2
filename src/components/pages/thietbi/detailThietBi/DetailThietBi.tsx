@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Modal1 from '../../../template/Modal/Modal';
 import './DetailThietBi.css'
 import { BsFillPlusSquareFill,BsFillPencilFill } from "react-icons/bs";
+import { DashboardProps } from '../../../../types/thietBi.types';
 
 
 
@@ -13,7 +14,7 @@ function handleChange(value: any) {
   console.log(`selected ${value}`);
 }
 
-const DetailThietBi = () => {
+const DetailThietBi = (props:DashboardProps) => {
   const [form] = Form.useForm();
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -27,9 +28,9 @@ const DetailThietBi = () => {
           <div>
             <strong style={{ color: '#7E7D88' }}>Thiết bị</strong>
             <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-            <Link to='/thietbi' style={{ textDecoration: 'none' }}> <strong style={{ color: '#7E7D88' }}>Danh sách thiết bị</strong></Link>
+            <Link to='/thietbi' style={{ textDecoration: 'none' }}> <strong style={{ color: '#7E7D88' }}>{props.name.thietBi}</strong></Link>
             <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-            <strong>Chi tiết thiết bị</strong>
+            <strong>{props.name.chiTiet} </strong>
           </div>
         </div>
         <div className=' layout_AddThietbi_Header_HoTen col-4' style={{ background: '#F7F7F7' }}>
@@ -90,7 +91,7 @@ const DetailThietBi = () => {
       <div className='layout_DetailThietBi_Button'>
         <div className='layout_DetailThietBi_Button_text'>
           <Link to={'/thietbi/capnhatthietbi'} style={{ marginLeft:'0px' }} className='layout_ThietBi_ThemDichVu_link' >
-            <BsFillPencilFill className='layout_ThietBi_ThemDichVu_icon' />
+            <BsFillPencilFill className='layout_ThietBi_DetailDichVu_icon' />
 
           </Link>
           <div>Cập nhật thiết bị</div>

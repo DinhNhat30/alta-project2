@@ -69,3 +69,12 @@
     -webkit-box-shadow: inset 0 0 6px rgb(250, 249, 249);
     background-color: #F5F5F5;
 }
+
+.thongBao__wrap {
+    background-color: rgb(255, 117, 6);
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-right: 19px;
+    margin-top: 18px;
+    margin-left: 70px;
+}

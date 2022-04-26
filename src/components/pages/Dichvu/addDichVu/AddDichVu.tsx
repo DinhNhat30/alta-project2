@@ -6,6 +6,7 @@ import { Checkbox } from 'antd';
 import { InputNumber } from 'antd';
 import Modal from '../../../template/Modal/Modal';
 import { Link } from 'react-router-dom';
+import { dichVuProps } from '../../../../types/dichVu.types';
 
 
 function onChange1(value: any) {
@@ -19,7 +20,7 @@ const { TextArea } = Input;
 
 const { Option } = Select;
 
-const AddDichVu = () => {
+const AddDichVu = (props:dichVuProps) => {
 
 
     const [form] = Form.useForm();
@@ -30,9 +31,9 @@ const AddDichVu = () => {
                     <div>
                         <strong style={{ color: '#7E7D88' }}>Dịch vụ </strong>
                         <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-                        <Link to='/dichvu' style={{ textDecoration: 'none' }} ><strong style={{ color: '#7E7D88' }}>Danh sách dịch vụ </strong></Link>
+                        <Link to='/dichvu' style={{ textDecoration: 'none' }} ><strong style={{ color: '#7E7D88' }}>{props.name.danhSach} </strong></Link>
                         <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-                        <strong>Thêm dịch vụ </strong>
+                        <strong>{props.name.them} </strong>
                     </div>
                 </div>
                 <div className=' layout_AddThietbi_Header_HoTen col-4' style={{ background: '#F7F7F7' }}>

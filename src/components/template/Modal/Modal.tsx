@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Modal1 from 'react-modal';
 import './Modal.css'
-import thongBao from '../../../assets/images/thongbao.png';
 import avata from '../../../assets/images/avata.png';
+import { BsBellFill } from "react-icons/bs";
+import { IconContext } from "react-icons";
 
 
 const Modal = () => {
-    const [modalIsOpen, setModalIsOpen] = useState(false)
-    const [imageProfile, setImageProfile] = useState<string>('../../../assets/images/thongbao.png');
+    
     const [statusNotify, setStatusNotify] = useState<boolean>(false); //flasr là đóng true là mở 
     const [bgNotify, setBgNotify] = useState<string>('#fff2e7');
     const [colorNotifyBtn, setColorNotifyBtn] = useState<string>('#ff9138')
+   
     useEffect(() => {
         // console.log('hinh anh', imageProfile);
 
@@ -19,11 +20,14 @@ const Modal = () => {
 
     useEffect(() => {
         if (statusNotify) {
-            setBgNotify('3ff7506');
+            setBgNotify('#ff7506');
             setColorNotifyBtn('#fff');
+            console.log(bgNotify);
         } else {
             setBgNotify('#fff2e7');
             setColorNotifyBtn('#ff9138')
+            console.log(bgNotify);
+
         }
     }, [statusNotify]);
 
@@ -31,16 +35,13 @@ const Modal = () => {
 
     return (
         <div>
-            <div className='layout_Dashboard_Header_img' onClick={() => setModalIsOpen(true)} >
-                <img src={thongBao} alt="" />
+            <div className='layout_Dashboard_Header_img' onClick={() => {
+                        setStatusNotify(!statusNotify)
+                    }}  >
+                <div className='thongBao__wrap' style={{ backgroundColor: `${bgNotify}` }}>
+                    <i className="fa fa-bell" style={{ color:`${colorNotifyBtn}` }} ></i>
+                </div>
             </div>
-            {/* <div className='layout_Dashboard_Header_img'onClick={() => setModalIsOpen(true)} 
-            >
-                <img src={thongBao} alt=""   style={{ backgroundColor:`${bgNotify}` }}
-            onClick={()=>{
-                setStatusNotify(!statusNotify);
-            }}/>
-            </div> */}
             <Link to={'/thongtinnguoidung'} className='layout_Dashboard_Header_img1'>
                 <img src={avata} alt="" />
             </Link>
@@ -50,8 +51,8 @@ const Modal = () => {
             </div>
             <div className='clear_both'></div>
             <Modal1
-                isOpen={modalIsOpen}
-                onRequestClose={() => setModalIsOpen(false)}
+                isOpen={statusNotify}
+                onRequestClose={() => setStatusNotify(false)}
 
                 style={{
                     overlay: {

@@ -13,6 +13,8 @@ import './Capso.css';
 import xanhduong from '../../../assets/images/xanhduong.png';
 import maudo from '../../../assets/images/do.png';
 import tim from '../../../assets/images/tim.png';
+import Vector from '../../../assets/images/Vector.png'
+import { capSoProps } from '../../../types/capSo.types';
 
 const { RangePicker } = DatePicker;
 
@@ -25,7 +27,7 @@ const { Option } = Select;
 const { Search } = Input;
 const onSearch = (value: any) => console.log(value);
 
-const Capso = () => {
+const Capso = (props: capSoProps) => {
 
   //table
   const data1: any = [
@@ -233,10 +235,50 @@ const Capso = () => {
       dataIndex: 'chiTiet',
       key: 'chiTiet',
       width: 106,
-      render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }} >Chi tiết</u>,
+      render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }} >
+      <Link to='/capso/detailcapso' style={{ textDecoration: 'none' }}>chi tiết</Link>
+    </u>,
     },
   ];
 
+  //select dropdown 
+  const [select,setSelect] = useState<boolean>(false)
+  const [selectUp,setSelectUp] = useState<string>('fa fa-caret-down')
+
+  useEffect(() =>{
+    if(select){
+      setSelectUp('fa fa-caret-up')
+    }
+    else{
+      setSelectUp('fa fa-caret-down')
+    }
+  },[select])
+
+  //select dropdown 1
+  const [select1,setSelect1] = useState<boolean>(false)
+  const [selectUp1,setSelectUp1] = useState<string>('fa fa-caret-down')
+
+  useEffect(() =>{
+    if(select1){
+      setSelectUp1('fa fa-caret-up')
+    }
+    else{
+      setSelectUp1('fa fa-caret-down')
+    }
+  },[select1])
+
+  //select dropdown 2
+  const [select2,setSelect2] = useState<boolean>(false)
+  const [selectUp2,setSelectUp2] = useState<string>('fa fa-caret-down')
+
+  useEffect(() =>{
+    if(select2){
+      setSelectUp2('fa fa-caret-up')
+    }
+    else{
+      setSelectUp2('fa fa-caret-down')
+    }
+  },[select2])
 
   return (
     <div className='layout_ThietBi'>
@@ -245,7 +287,7 @@ const Capso = () => {
           <div>
             <strong style={{ color: '#7E7D88' }}>Cấp số  </strong>
             <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-            <strong>Danh sách cấp số </strong>
+            <strong>{props.name.danhSach} </strong>
           </div>
         </div>
         <div className=' layout_Thietbi_Header_HoTen col-4' style={{ background: '#F7F7F7' }}>
@@ -262,7 +304,7 @@ const Capso = () => {
         <div className="layout_Capso_text">
           <div className='layout_ThietBi_row1_text'>Tên dịch vụ </div>
           <div>
-            <Select defaultValue="Tất cả" style={{ width: '100%' }} >
+            <Select defaultValue="Tất cả" style={{ width: '100%' }} onClick={() =>{setSelect(!select)}} suffixIcon={<i className={selectUp} style={{ fontSize:'25px' }}></i>} >
               <Option className='hoverOption' value="Tất cả">Tất cả</Option>
               <Option className='hoverOption' value="Khám sản - Phụ khoa">Khám sản - Phụ khoa</Option>
               <Option className='hoverOption' value="Khám răng hàm mặt">Khám răng hàm mặt</Option>
@@ -274,7 +316,7 @@ const Capso = () => {
         <div className="layout_Capso_text">
           <div className='layout_ThietBi_row1_text'>Tình trạng</div>
           <div>
-            <Select defaultValue="Tất cả" style={{ width: '100%' }} >
+            <Select defaultValue="Tất cả" style={{ width: '100%' }} onClick={() =>{setSelect1(!select1)}} suffixIcon={<i className={selectUp1} style={{ fontSize:'25px' }}></i>} >
               <Option className='hoverOption' value="Tất cả">Tất cả</Option>
               <Option className='hoverOption' value="Đang chờ">Đang chờ</Option>
               <Option className='hoverOption' value="Đã sử dụng">Đã sử dụng</Option>
@@ -286,7 +328,7 @@ const Capso = () => {
         <div className="layout_Capso_text">
           <div className='layout_ThietBi_row1_text'>Nguồn cấp</div>
           <div>
-            <Select defaultValue="Tất cả" style={{ width: '100%' }} >
+            <Select defaultValue="Tất cả" style={{ width: '100%' }} onClick={() =>{setSelect2(!select2)}} suffixIcon={<i className={selectUp2} style={{ fontSize:'25px' }}></i>} >
               <Option className='hoverOption' value="Tất cả">Tất cả</Option>
               <Option className='hoverOption' value="Đang chờ">Kiosk</Option>
               <Option className='hoverOption' value="Đã sử dụng">Hệ thống</Option>

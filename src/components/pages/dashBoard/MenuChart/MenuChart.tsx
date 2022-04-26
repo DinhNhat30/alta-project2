@@ -1,6 +1,7 @@
 import React from 'react'
 import { Select } from 'antd';
 import { Link, Outlet } from 'react-router-dom';
+import Vector from '../../../../assets/images/Vector.png';
 
 const invoices = [
     {
@@ -25,15 +26,15 @@ export const MenuChart = () => {
             <div className='layout_Dashboard_charts_Thongke_text1'>
                 Xem theo
             </div>
-            <Select defaultValue="Ngày" style={{ width: 100, marginLeft: '10px' }} >
+            <Select  defaultValue="Ngày" style={{ width: 100, marginLeft: '10px' }} >
                 {
                     invoices.map((item, index) => (
-                        <Option className='hoverOption' value={item.name} key={index}>
+                        <Option  className='hoverOption' value={item.name} key={index}>
                             <Link style={{ textDecoration:'none', color:'#7E7D88' }} to={`${item.id}`} >{item.name}</Link>
                         </Option>
                     ))
                 }
-               
+                
             </Select>
             
         </div>

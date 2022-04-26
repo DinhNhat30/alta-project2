@@ -75,7 +75,7 @@ const Sidebar = () => {
                             </Menu.Item>
                         )
                     })}
-                    <SubMenu style={{ background:'#FFFFFF',color:'#FF7506' }} key="sub1" icon={<BsOctagon />} title="Cài đặt hệ thống" >
+                    <SubMenu style={{ background:'#FFFFFF',color:'#FF7506' }} key="sub1" icon={<BsOctagon />}  title="Cài đặt hệ thống" >
                         <Menu.Item key="6">
                             <Link to={'/quanlyvaitro'}>Quản lý vai trò </Link>
                         </Menu.Item>    

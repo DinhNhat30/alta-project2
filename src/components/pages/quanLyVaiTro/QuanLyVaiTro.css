@@ -23,3 +23,7 @@
     /* Gray/$-gray-500 */
     color: #282739;
 }
+
+.ant-input-affix-wrapper {
+    border-right: 0px;
+}

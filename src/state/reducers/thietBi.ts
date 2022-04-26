@@ -1,26 +1,18 @@
 
-import {Action} from "../actions"
+import { Action, All_ThietBi, ThietBiList } from "../actions/thietBiActions"
 import { ActtionType } from "../constants/ActionsTypes"
-var initialState = {
-    thietBi: [
-        {
-            maTB: '1',
-            tenTB: 'John Brown',
-            address: 'New York No. 1 Lake ',
-            trangThaiHD: 'Hoạt động',
-            trangThaiKN: 'Mất kết nối',
-            dichVu: 'sadsa'
-        }
-    ],
+var initialState: ThietBiList = {
+    thietBiList: [], // có 1 key thì a lấy kiểu hồi nảy dc 
+    // còn nhiều key thì a lấy như hồi nảy là bị lỗi, phải dùng rest để lấy
 }
-
-const productReducer = (state = initialState , action: Action ) =>{
-    switch(action.type) {
+const thietBiReducer = (state = initialState, action: Action) => {
+    switch (action.type) {
         case ActtionType.ALL_THIETBI:
-            return {...state, thietBi: action.thietBi};
+
+            return { ...state, thietBiList: action.payload };
         default:
             return state;
     }
 }
 
-export default productReducer;
+export default thietBiReducer;

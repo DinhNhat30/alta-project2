@@ -88,7 +88,9 @@ const QuanLyVaiTro = () => {
             dataIndex: 'chiTiet',
             key: 'chiTiet',
             width: 125,
-            render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }} >Cập nhật</u>,
+            render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }} >
+            <Link  to='/quanlyvaitro/updatevaitro' style={{ textDecoration: 'none' }}>cập nhật</Link>
+          </u>,
         },
     ];
     return (
@@ -112,11 +114,11 @@ const QuanLyVaiTro = () => {
                 <div style={{ width:'240px', float:'left' }} >
                     <div className='layout_QuanLyVaiTro_text_tuKhoa'>Từ khóa  </div>
                     <Search
-
+                        
                         placeholder="Nhập từ khóa "
                         allowClear
                         onSearch={onSearch}
-                        style={{ width: '240px' }}
+                        style={{ width: '240px', borderRight:'0px' }}
                     />
                 </div>
             </div>

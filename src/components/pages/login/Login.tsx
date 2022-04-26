@@ -1,9 +1,9 @@
 
-import React from 'react'
 import { Input, Space } from 'antd';
-import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
-import './Login.css'
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './Login.css';
+
 const Login = () => {
     return (
         <div className='login_Layout'>

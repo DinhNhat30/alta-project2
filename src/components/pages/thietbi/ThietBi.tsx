@@ -3,68 +3,35 @@ import './ThietBi.css'
 import { AiOutlineRight } from "react-icons/ai";
 import { Input, Space } from 'antd';
 import { Table } from 'antd';
-import { render } from '@testing-library/react';
 import { Select } from 'antd';
-import { ICollection } from './../../../state/actions/index';
 import { useDispatch, useSelector } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { actioCreator, State } from '../../../state';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../../firebase/config';
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import Modal from '../../template/Modal/Modal';
-import Modal2 from 'react-modal';
-
+import Vector from '../../../assets/images/Vector.png'
 import { Popover, Button } from 'antd';
-
+import { setAllThietBi } from '../../../state/action-creators/thietBiCreators';
+import { State } from '../../../state';
+import { ThietBi } from '../../../state/actions/thietBiActions';
+import { DashboardProps } from '../../../types/thietBi.types';
 
 const { Option } = Select;
 const { Search } = Input;
 const onSearch = (value: any) => console.log(value);
-const ThietBi = () => {
-
-  //modal
-  const [modalIsOpen, setModalIsOpen] = useState(false)
+const ThietBiList = (props: DashboardProps) => {
 
   //lấy dữ liêu từ firebase lên 
-  const data: ICollection[] = []
   const dispatch = useDispatch();
-  const { setAllThietBi } = bindActionCreators(actioCreator, dispatch)
-  const dataCollectionRef = collection(db, 'thietBi')
+  // const { setAllThietBi } = bindActionCreators(actioCreator, dispatch)
+
   useEffect(() => {
-    const getData = async () => {
-      const querySnapshot = await getDocs(dataCollectionRef)
-      querySnapshot.forEach((doc) => {
-        data.push({ maTB: `${doc.id}`, ...doc.data() });
-        console.log('data', data);
-
-      })
-      dispatch(setAllThietBi(data))
-    }
-    getData()
+    dispatch(setAllThietBi()) 
   }, [])
-  
-  //table
-  const data1: any = [
+  const { thietBiList } = useSelector((state: State) => state.thietBi)
+ 
+  const data:ThietBi[] = thietBiList
 
-    {
-      address: "192.168.2.0",
-      dichVu: "khám tim mạch , khám sản - phụ khoa , khám răng hàm mặt, khám tai mũi họng . khám hô hấp, khám tổng quát ",
-      maTB: "KIO_01",
-      tenTB: "kiosk",
-      trangThaiHD: "Hoạt động",
-      trangThaiKN: "Mất kết nối"
-    },
-    {
-      address: "192.168.10.255",
-      dichVu: "khám tim mạch , khám sản- phụ khoa, khám răng hàm mặt , khái tai mũi họng , khám tổng quát , khám hô hấp",
-      maTB: "KIO-02",
-      tenTB: "kiosk2",
-      trangThaiHD: "Ngưng hoạt động",
-      trangThaiKN: "Kết nối"
-    }
-  ];
+  
   const columns: any = [
     {
       title: 'Mã thiết bị ',
@@ -174,9 +141,33 @@ const ThietBi = () => {
   ];
 
 
-  const thietBi = useSelector((state: State) => state.thietBi)
-  // console.log('thietBi', thietBi);
+ 
+  //drop select 
+  const [statusNotify,setStatusNotify] = useState<boolean>(false)
+  const [select,setSelect] = useState<boolean>(false)
+  const [up, setUp] = useState<string>('fa fa-caret-down')
+  const [selectUp,setSelectUp] = useState<string>('fa fa-caret-down')
 
+  useEffect(() =>{
+    if(select){
+      setSelectUp('fa fa-caret-up')
+    }else{
+      setSelectUp('fa fa-caret-down')
+    }
+  },[select])
+  
+  
+  useEffect(() =>{
+    if(statusNotify){
+      setUp('fa fa-caret-up')
+      console.log(up);
+      
+    }
+    else{
+      setUp('fa fa-caret-down')
+      console.log(up);
+    }
+  },[statusNotify])
   return (
     <div className='layout_ThietBi'>
       <div className='layout_Thietbi_Header row' >
@@ -184,7 +175,7 @@ const ThietBi = () => {
           <div>
             <strong style={{ color: '#7E7D88' }}>Thiết bị </strong>
             <AiOutlineRight style={{ color: '#7E7D88', fontSize: '14px', width: '25px' }} />
-            <strong>Danh sách thiết bị </strong>
+            <strong>{props.name.thietBi} </strong>
           </div>
         </div>
         <div className=' layout_Thietbi_Header_HoTen col-4' style={{ background: '#F7F7F7' }}>
@@ -195,13 +186,15 @@ const ThietBi = () => {
 
 
       <div className="row layout_ThietBi_row">
-        <div className='layout_ThietBi_row_text'> Danh sách thiết bị </div>
+        <div className='layout_ThietBi_row_text'> {props.name.thietBi} </div>
       </div>
       <div className="row layout_ThietBi_row1">
         <div className="col-3">
           <div className='layout_ThietBi_row1_text'>Trạn thái hoạt động </div>
           <div>
-            <Select defaultValue="Tất cả" style={{ width: '100%' }} >
+            <Select  defaultValue="Tất cả" style={{ width: '100%' }} suffixIcon={<i className={up} style={{ fontSize:'25px' }}></i>} onClick={() => {
+                        setStatusNotify(!statusNotify)
+                    }} >
               <Option className='hoverOption' value="Tất cả">Tất cả</Option>
               <Option className='hoverOption' value="Hoạt động">Hoạt động</Option>
               <Option className='hoverOption' value="Ngưng hoạt động">Ngưng hoạt động</Option>
@@ -212,7 +205,9 @@ const ThietBi = () => {
         <div className="col-3">
           <div className='layout_ThietBi_row1_text'>Trạng thái kết nối </div>
           <div>
-            <Select defaultValue="Tất cả" style={{ width: '100%' }} >
+            <Select defaultValue="Tất cả" style={{ width: '100%' }} suffixIcon={<i className={selectUp} style={{ fontSize:'25px' }}></i>} onClick={() => {
+                        setSelect(!select)
+                    }} >
               <Option className='hoverOption' value="Tất cả">Tất cả</Option>
               <Option className='hoverOption' value="Kết nối">Kết nối</Option>
               <Option className='hoverOption' value="Mất kết nối">Mất kết nối</Option>
@@ -236,7 +231,7 @@ const ThietBi = () => {
       </div>
       <div className="row">
         <div style={{ padding: '20px 12px 10px 25px' }} className="col-11">
-          <Table pagination={{ pageSize: 8 }} columns={columns} dataSource={data1} style={{ height: '400px' }} />
+          <Table rowKey={`maTB`} pagination={{ pageSize: 8 }} columns={columns} dataSource={data} style={{ height: '400px' }} />
         </div>
         <div className="col-1 " style={{ padding: '23px 0px' }}>
           <div className='layout_ThietBi_ThemDichVu'>
@@ -253,4 +248,4 @@ const ThietBi = () => {
   )
 }
 
-export default ThietBi
+export default ThietBiList 

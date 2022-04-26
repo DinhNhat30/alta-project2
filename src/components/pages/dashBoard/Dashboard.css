@@ -338,3 +338,7 @@ abbr[title] {
     background-color: #ff76066c !important;
     border-radius: 8px;
 }
+
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background-color: #FFF2E7;
+}
