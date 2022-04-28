@@ -16,7 +16,7 @@ firebase.initializeApp({
 // chỗ này a phải set cho nó truyền vô key của  firebase mình cần
 const storeThietBi = firebase.firestore().collection("thietBi");
 const storeDichVu = firebase.firestore().collection("dichVu"); 
-const storeLogin = firebase.firestore().collection("Login"); 
+const storeCapSo = firebase.firestore().collection("capSo"); 
 
-export { storeThietBi, storeDichVu,storeLogin}
+export { storeThietBi, storeDichVu,storeCapSo}
 export default firebase;

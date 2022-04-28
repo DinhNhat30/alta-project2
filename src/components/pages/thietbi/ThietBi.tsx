@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react'
-import './ThietBi.css'
+import { Input, Popover, Select, Table } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineRight } from "react-icons/ai";
-import { Input, Space } from 'antd';
-import { Table } from 'antd';
-import { Select } from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
 import { BsFillPlusSquareFill } from "react-icons/bs";
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Modal from '../../template/Modal/Modal';
-import Vector from '../../../assets/images/Vector.png'
-import { Popover, Button } from 'antd';
-import { setAllThietBi } from '../../../state/action-creators/thietBiCreators';
 import { State } from '../../../state';
+import { setAllThietBi } from '../../../state/action-creators/thietBiCreators';
 import { ThietBi } from '../../../state/actions/thietBiActions';
 import { DashboardProps } from '../../../types/thietBi.types';
+import Modal from '../../template/Modal/Modal';
+import './ThietBi.css';
 
 const { Option } = Select;
 const { Search } = Input;
@@ -23,15 +19,11 @@ const ThietBiList = (props: DashboardProps) => {
   //lấy dữ liêu từ firebase lên 
   const dispatch = useDispatch();
   // const { setAllThietBi } = bindActionCreators(actioCreator, dispatch)
-
   useEffect(() => {
     dispatch(setAllThietBi()) 
   }, [])
-  const { thietBiList } = useSelector((state: State) => state.thietBi)
- 
+  const { thietBiList } = useSelector((state: State) => state.thietBi);
   const data:ThietBi[] = thietBiList
-
-  
   const columns: any = [
     {
       title: 'Mã thiết bị ',
@@ -119,15 +111,13 @@ const ThietBiList = (props: DashboardProps) => {
     },
     {
       title: '',
-      dataIndex: 'chiTiet',
-      key: 'chiTiet',
+      dataIndex: 'maTB',
+      key: '',
       width: 77,
-      render: () => <u style={{ cursor: 'pointer', color: '#4277FF' }} >
-        <Link to='/thietbi/detailthietbi' style={{ textDecoration: 'none' }}>chi tiết</Link>
+      render: (dataIndex:any) => <u style={{ cursor: 'pointer', color: '#4277FF' }} >
+        <Link to={`/thietbi/detailthietbi/${dataIndex}`} style={{ textDecoration: 'none' }}>chi tiết</Link>
       </u>,
     },
-
-
     {
       title: '',
       dataIndex: 'capNhat',
@@ -140,8 +130,6 @@ const ThietBiList = (props: DashboardProps) => {
     },
   ];
 
-
- 
   //drop select 
   const [statusNotify,setStatusNotify] = useState<boolean>(false)
   const [select,setSelect] = useState<boolean>(false)
@@ -160,12 +148,12 @@ const ThietBiList = (props: DashboardProps) => {
   useEffect(() =>{
     if(statusNotify){
       setUp('fa fa-caret-up')
-      console.log(up);
+      // console.log(up);
       
     }
     else{
       setUp('fa fa-caret-down')
-      console.log(up);
+      // console.log(up);
     }
   },[statusNotify])
   return (

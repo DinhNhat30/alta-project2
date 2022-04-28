@@ -1,6 +1,11 @@
 export enum ActtionType {
+    //thiết bị 
     ALL_THIETBI='ALL_THIETBI',
-    ALL_DICHVU = 'ALL_DICHVU',
-    ALL_LOGIN = 'ALL_LOGIN',
+    CHI_TIET_THIET_BI ='CHI_TIET_THIET_BI',
 
+    //dịch vụ
+    ALL_DICHVU = 'ALL_DICHVU',
+
+    //cap so
+    ALL_CAPSO = 'ALL_CAPSO',
 }

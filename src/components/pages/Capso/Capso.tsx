@@ -15,6 +15,10 @@ import maudo from '../../../assets/images/do.png';
 import tim from '../../../assets/images/tim.png';
 import Vector from '../../../assets/images/Vector.png'
 import { capSoProps } from '../../../types/capSo.types';
+import { useDispatch, useSelector } from 'react-redux';
+import { setALLCapSo } from '../../../state/action-creators/capSoCreators';
+import { State } from '../../../state';
+import { CapSo } from '../../../state/actions/capSoActions';
 
 const { RangePicker } = DatePicker;
 
@@ -28,133 +32,6 @@ const { Search } = Input;
 const onSearch = (value: any) => console.log(value);
 
 const Capso = (props: capSoProps) => {
-
-  //table
-  const data1: any = [
-
-    {
-      id: '1212',
-      tenKhachHang: 'Lê Huỳnh Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Đang chờ',
-      nguonCap: 'Kiosk'
-
-    },
-    {
-      id: '1213',
-      tenKhachHang: 'Huỳnh Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Đã sử dụng',
-      nguonCap: 'Kiosk'
-
-    },
-    {
-      id: '1212',
-      tenKhachHang: 'Lê Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Bỏ qua',
-      nguonCap: 'Kiosk'
-
-    },
-    {
-      id: '1212',
-      tenKhachHang: 'Lê Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Bỏ qua',
-      nguonCap: 'Kiosk'
-
-    },
-    {
-      id: '1212',
-      tenKhachHang: 'Lê Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Bỏ qua',
-      nguonCap: 'Kiosk'
-
-    },
-    {
-      id: '1212',
-      tenKhachHang: 'Lê Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Bỏ qua',
-      nguonCap: 'Kiosk'
-
-    },
-    {
-      id: '1212',
-      tenKhachHang: 'Lê Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Bỏ qua',
-      nguonCap: 'Kiosk'
-
-    },
-    {
-      id: '1212',
-      tenKhachHang: 'Lê Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Bỏ qua',
-      nguonCap: 'Kiosk'
-
-    },
-    {
-      id: '1212',
-      tenKhachHang: 'Lê Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Bỏ qua',
-      nguonCap: 'Kiosk'
-
-    },
-    {
-      id: '1212',
-      tenKhachHang: 'Lê Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Bỏ qua',
-      nguonCap: 'Kiosk'
-
-    },
-    {
-      id: '1212',
-      tenKhachHang: 'Lê Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Bỏ qua',
-      nguonCap: 'Kiosk'
-
-    },
-    {
-      id: '1212',
-      tenKhachHang: 'Lê Ái Vân',
-      tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
-      trangThai: 'Bỏ qua',
-      nguonCap: 'Kiosk'
-
-    },
-
-
-  ];
   const columns: any = [
     {
       title: 'STT ',
@@ -214,7 +91,7 @@ const Capso = (props: capSoProps) => {
           return (
             <div >
               <img style={{ paddingRight: '5px' }} src={maudo} alt="" />
-              Đã sử dụng
+              Bỏ qua
             </div>
           )
         }
@@ -279,6 +156,16 @@ const Capso = (props: capSoProps) => {
       setSelectUp2('fa fa-caret-down')
     }
   },[select2])
+
+  //lấy dữ liệu từ firebase 
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(setALLCapSo())
+  },[])
+  const {capSoList} = useSelector((state: State) => state.capSo)
+  const data:CapSo[] = capSoList
+  // console.log('date ' , data);
+  
 
   return (
     <div className='layout_ThietBi'>
@@ -368,7 +255,7 @@ const Capso = (props: capSoProps) => {
       <div style={{ clear: 'both' }}></div>
       <div className="row">
         <div style={{ padding: '20px 12px 10px 25px' }} className="col-11">
-          <Table pagination={{ pageSize: 8 }} columns={columns} dataSource={data1} style={{ height: '400px' }} />
+          <Table rowKey={`id`} pagination={{ pageSize: 8 }} columns={columns} dataSource={data} style={{ height: '400px' }} />
         </div>
         <div className="col-1 " style={{ padding: '23px 0px' }}>
           <div className='layout_ThietBi_ThemDichVu'>

@@ -28,8 +28,6 @@ export const setAllDichVu = (): ThunkAction<
                     if (test.length > 0) {
                         const dichVuData = test as DichVu[]
                         console.log(dichVuData);
-                        
-        //này nè
                         dispatch({
                             type:  ActtionType.ALL_DICHVU,
                             payload: dichVuData,

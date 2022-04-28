@@ -1,11 +1,14 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { AiOutlineRight } from 'react-icons/ai';
 import { Form, Modal, message, Button, Select } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Modal1 from '../../../template/Modal/Modal';
 import './DetailThietBi.css'
 import { BsFillPlusSquareFill,BsFillPencilFill } from "react-icons/bs";
-import { DashboardProps } from '../../../../types/thietBi.types';
+import { DashboardProps, MyParams } from '../../../../types/thietBi.types';
+import { useDispatch, useSelector } from 'react-redux';
+import { layChiTiet } from '../../../../state/action-creators/thietBiCreators';
+import { State } from '../../../../state';
 
 
 
@@ -17,10 +20,38 @@ function handleChange(value: any) {
 const DetailThietBi = (props:DashboardProps) => {
   const [form] = Form.useForm();
   const [isModalVisible, setIsModalVisible] = useState(false);
-
   const showModal = () => {
     setIsModalVisible(true);
   };
+
+  //xem chi tiet
+  const {id} = useParams<keyof MyParams>() as MyParams;
+  const [chiTiet, setChiTiet] = useState<any>({
+    maTB: '',
+    address: '',
+    dichVu: '',
+    tenTB: '',
+    trangThaiHD: '',
+    trangThaiKN: '',
+});
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(layChiTiet(id)) 
+  }, [])
+  const {chiTietThietBi} = useSelector((state: State) => state.thietBi);
+  // console.log('fdsafdsa', chiTietThietBi);
+  //setChiTiet
+  useEffect(()=> {
+      setChiTiet({
+        maTB: `${chiTietThietBi.maTB}`,
+        address: `${chiTietThietBi.address}`,
+        dichVu: `${chiTietThietBi.dichVu}`,
+        tenTB: `${chiTietThietBi.tenTB}`,
+        trangThaiHD: `${chiTietThietBi.trangThaiHD}`,
+        trangThaiKN: `${chiTietThietBi.trangThaiKN}`,
+      })
+  }, [chiTietThietBi]);
+
   return (
     <div className='layout_AddThietBi'>
       <div className='layout_AddThietbi_Header row' >
@@ -52,25 +83,25 @@ const DetailThietBi = (props:DashboardProps) => {
           <div className='layout_DetailThietBi_Form_text1_left' >
             <div style={{ paddingBottom: '16px' }}>
               <div className='layout_DetailThietBi_Form_text1_left_text'>Mã thiết bị : </div>
-              <div className='layout_DetailThietBi_Form_text1_left_TT'>KIO_01</div>
+              <div className='layout_DetailThietBi_Form_text1_left_TT'>{chiTiet.maTB}</div>
             </div>
             <div style={{ paddingBottom: '16px' }}>
               <div className='layout_DetailThietBi_Form_text1_left_text'>Tên thiết bị : </div>
-              <div className='layout_DetailThietBi_Form_text1_left_TT'>Kiosk</div>
+              <div className='layout_DetailThietBi_Form_text1_left_TT'>{chiTiet.tenTB}</div>
             </div>
             <div style={{ paddingBottom: '16px' }}>
               <div className='layout_DetailThietBi_Form_text1_left_text'>Địa chỉ IP : </div>
-              <div className='layout_DetailThietBi_Form_text1_left_TT'>128.172.308</div>
+              <div className='layout_DetailThietBi_Form_text1_left_TT'>{chiTiet.address}</div>
             </div>
           </div>
           <div style={{ float: 'left', width: '50%' }}>
             <div style={{ paddingBottom: '16px' }}>
               <div className='layout_DetailThietBi_Form_text1_left_text'>Loại thiết bị : </div>
-              <div className='layout_DetailThietBi_Form_text1_left_TT'>Kiosk</div>
+              <div className='layout_DetailThietBi_Form_text1_left_TT'>{chiTiet.tenTB}</div>
             </div>
             <div style={{ paddingBottom: '16px' }}>
               <div className='layout_DetailThietBi_Form_text1_left_text'>Tên đăng nhập : </div>
-              <div className='layout_DetailThietBi_Form_text1_left_TT'>Linkio001</div>
+              <div className='layout_DetailThietBi_Form_text1_left_TT'>Linhkyo</div>
             </div>
             <div style={{ paddingBottom: '16px' }}>
               <div className='layout_DetailThietBi_Form_text1_left_text'>Mật khẩu : </div>
@@ -83,7 +114,7 @@ const DetailThietBi = (props:DashboardProps) => {
             Dịch vụ sử dụng
           </div>
           <div className='layout_DetailThietBi_Form_text1_left_TT'>
-            khám tim mạch , khám sản - phụ khoa , khám răng hàm mặt , khám tai mũi họng, khám hô hấp , khám tổng quát
+            {chiTiet.dichVu}
           </div>
         </div>
 

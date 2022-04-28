@@ -39,3 +39,23 @@ export const setAllThietBi = (): ThunkAction<
         }
     };
 };
+
+//xem chi tiết thiết bị 
+export const layChiTiet = (id:any): ThunkAction<
+void,
+State,
+null,
+Action
+> => {
+    return async (dispatch) => {
+        try { 
+            dispatch({
+                type: ActtionType.CHI_TIET_THIET_BI,
+                payload: id,
+            })
+        }
+        catch(e:any) { 
+            console.log(e);
+        }
+    }
+}

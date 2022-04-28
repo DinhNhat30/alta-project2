@@ -2,17 +2,27 @@
 import { Action, All_ThietBi, ThietBiList } from "../actions/thietBiActions"
 import { ActtionType } from "../constants/ActionsTypes"
 var initialState: ThietBiList = {
-    thietBiList: [], // có 1 key thì a lấy kiểu hồi nảy dc 
-    // còn nhiều key thì a lấy như hồi nảy là bị lỗi, phải dùng rest để lấy
+    //danh sách thiết bị
+    thietBiList: [], 
+    //xem chi tiết thiết bị
+    chiTietThietBi:{}
 }
-const thietBiReducer = (state = initialState, action: Action) => {
+export const thietBiReducer = (state = initialState, action: Action) => {
     switch (action.type) {
-        case ActtionType.ALL_THIETBI:
-
+        case ActtionType.ALL_THIETBI: {
             return { ...state, thietBiList: action.payload };
+        }
+        case ActtionType.CHI_TIET_THIET_BI: {
+            // console.log('thiet bi', state.thietBiList);
+            const realData = state.thietBiList.filter((item:any)=> item.maTB === action.payload);
+            // console.log(realData);
+            state.chiTietThietBi = realData[0];
+            // console.log('stateChiTiet', state.chiTietThietBi);
+            return {...state};
+        }
         default:
             return state;
     }
 }
 
-export default thietBiReducer;
+

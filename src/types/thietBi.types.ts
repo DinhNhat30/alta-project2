@@ -7,3 +7,8 @@ export type Name ={
   export type DashboardProps ={
     name:Name
   }
+
+  //id xem chi tiet thiet bi
+  export type MyParams = {
+    id: string
+  }
