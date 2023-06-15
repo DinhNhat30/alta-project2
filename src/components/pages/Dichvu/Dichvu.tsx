@@ -200,12 +200,12 @@ const Dichvu = (props: dichVuProps) => {
           <div className='' style={{ display:'block' , width:'338px' }}>
 
             <Space direction="vertical" >
-              <DatePicker style={{ borderRadius: '8px' }} defaultValue={moment('10/10/2021', dateFormatList[0])} format={dateFormatList} />
+              <DatePicker style={{ borderRadius: '8px' }} defaultValue={moment('10/10/2023', dateFormatList[0])} format={dateFormatList} />
             </Space>
             <AiFillCaretRight style={{ margin:'0px 7.5px' }} />
 
             <Space direction="vertical">
-              <DatePicker style={{ borderRadius: '8px' }} defaultValue={moment('18/10/2021', dateFormatList[0])} format={dateFormatList} />
+              <DatePicker style={{ borderRadius: '8px' }} defaultValue={moment('18/10/2023', dateFormatList[0])} format={dateFormatList} />
             </Space>
           </div>
         </div>

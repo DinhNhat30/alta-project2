@@ -94,10 +94,10 @@ const AddCapSo = (props: capSoProps) => {
                </div>
                <div className='layout_AddCapSo_Modal_footer'>
                    <div className='layout_AddCapSo_Modal_footer_text'>
-                       Thời gian cấp: 09:30 11/10/2021
+                       Thời gian cấp: 09:30 11/10/2023
                    </div>
                    <div className='layout_AddCapSo_Modal_footer_text mt-2'>
-                       Hạn sử dụng: 17:30 11/10/2021
+                       Hạn sử dụng: 17:30 11/10/2023
                    </div>
                </div>
             </Modal>

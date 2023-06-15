@@ -90,39 +90,39 @@ const Modal = () => {
                 <div className='Modal_body_layout' id="Modal_1" >
                     <div className='Modal_body'>
                         <div className='Modal_NguoiDung'>Người dùng: Nguyễn Thị Thùy Dung</div>
-                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
+                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2023</div>
                     </div>
                     <div className='Modal_body'>
                         <div className='Modal_NguoiDung'>Người dùng: Nguyễn Thiên Chinh</div>
-                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
+                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2023</div>
                     </div>
                     <div className='Modal_body'>
                         <div className='Modal_NguoiDung'>Người dùng: Võ Thị Kim Liên</div>
-                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
+                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2023</div>
                     </div>
                     <div className='Modal_body'>
                         <div className='Modal_NguoiDung'>Người dùng: Nguyễn Quốc Huy</div>
-                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
+                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2023</div>
                     </div>
                     <div className='Modal_body'>
                         <div className='Modal_NguoiDung'>Người dùng: Võ Ngọc Lan Anh</div>
-                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
+                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2023</div>
                     </div>
                     <div className='Modal_body'>
                         <div className='Modal_NguoiDung'>Người dùng: Nguyễn thị Trúc Anh</div>
-                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
+                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2023</div>
                     </div>
                     <div className='Modal_body'>
                         <div className='Modal_NguoiDung'>Người dùng: Nguyễn thị Trúc Anh</div>
-                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
+                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2023</div>
                     </div>
                     <div className='Modal_body'>
                         <div className='Modal_NguoiDung'>Người dùng: Nguyễn thị Trúc Anh</div>
-                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
+                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2023</div>
                     </div>
                     <div className='Modal_body'>
                         <div className='Modal_NguoiDung'>Người dùng: Nguyễn thị Trúc Anh</div>
-                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2021</div>
+                        <div className='Modal_Time'>Thời gian nhận số: 12h20 ngày 30/11/2023</div>
                     </div>
                 </div>
             </Modal1>

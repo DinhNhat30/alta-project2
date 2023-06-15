@@ -95,7 +95,7 @@ const DashBoardChartThang = () => {
     <div style={{ position: 'relative' }} className='layout_Dashboard_charts row'>
       <div className='layout_Dashboard_charts_Thongke col-6'>
         <div className='layout_Dashboard_charts_Thongke_text'>Bảng thống kê theo tháng </div>
-        <div>Năm 2021</div>
+        <div>Năm 2023</div>
       </div>
       <div style={{ padding: '20px', height: '42px', display: 'block' }} className='col-6'>
       </div>

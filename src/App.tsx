@@ -1,21 +1,20 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import Login from './components/pages/login/Login';
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Forgot } from './components/pages/forgot/Forgot';
 import ResetPassword from './components/pages/resetPassword/ResetPassword';
 
 import { Menu } from './components/template/layout/Menu';
 import BaoCao from './components/pages/baoCao/BaoCao';
 import DashBoard from './components/pages/dashBoard/DashBoard';
-import Capso from './components/pages/capSo/Capso';
-import Dichvu from './components/pages/dichVu/Dichvu';
-import HeThong from './components/pages/heThong/HeThong';
-import ThietBi from './components/pages/thietBi/ThietBi';
-import AddThietBi from './components/pages/thietBi/addThietBi/AddThietBi';
-import AddDichVu from './components/pages/dichVu/addDichVu/AddDichVu';
+import Capso from './components/pages/Capso/Capso';
+import Dichvu from './components/pages/Dichvu/Dichvu';
+import HeThong from './components/pages/hethong/HeThong';
+import AddThietBi from './components/pages/thietbi/addThietBi/AddThietBi';
+import AddDichVu from './components/pages/Dichvu/addDichVu/AddDichVu';
 import { ThongTinNguoiDung } from './components/pages/thongTinNguoiDung/ThongTinNguoiDung';
-import AddCapSo from './components/pages/capSo/addCapSo/AddCapSo';
+import AddCapSo from './components/pages/Capso/addCapSo/AddCapSo';
 
 import { createBrowserHistory } from 'history';
 import NotFound from './components/pages/notFound/NotFound';
@@ -27,11 +26,11 @@ import AddVaiTro from './components/pages/quanLyVaiTro/addVaiTro/AddVaiTro';
 import QuanLyTaiKhoan from './components/pages/quanLyTaiKhoan/QuanLyTaiKhoan';
 import AddTaiKhoan from './components/pages/quanLyTaiKhoan/addTaiKhoan/AddTaiKhoan';
 import NhatKyNguoiDung from './components/pages/nhatKyNguoiDung/NhatKyNguoiDung';
-import DetailThietBi from './components/pages/thietBi/detailThietBi/DetailThietBi';
-import UpdateThietBi from './components/pages/thietBi/updateThietBi/UpdateThietBi';
-import DetailDichVu from './components/pages/dichVu/detailDichVu/DetailDichVu';
-import UpdateDichVu from './components/pages/dichVu/updateDichVu/UpdateDichVu';
-import DetailCapSo from './components/pages/capSo/detailCapSo/DetailCapSo';
+import DetailThietBi from './components/pages/thietbi/detailThietBi/DetailThietBi';
+import UpdateThietBi from './components/pages/thietbi/updateThietBi/UpdateThietBi';
+import DetailDichVu from './components/pages/Dichvu/detailDichVu/DetailDichVu';
+import UpdateDichVu from './components/pages/Dichvu/updateDichVu/UpdateDichVu';
+import DetailCapSo from './components/pages/Capso/detailCapSo/DetailCapSo';
 import UpdateVaiTro from './components/pages/quanLyVaiTro/updateVaiTro/UpdateVaiTro';
 import UpdateTaiKhoan from './components/pages/quanLyTaiKhoan/updateTaiKhoan/UpdateTaiKhoan';
 
@@ -69,7 +68,8 @@ const App: React.FunctionComponent = () => {
             <Route path='/2' element={<DashBoardChartThang />} />
             
           </Route>
-          <Route path='/thietbi' element={<ThietBi name={thietBiName}/>} />
+          
+          {/* <Route path='/thietbi' element={<thietBi name={thietBiName}/>} /> */}
           <Route path='/thietbi/themthietbi' element={<AddThietBi name={thietBiName} />} />
           <Route path='/thietbi/detailthietbi/:id' element={<DetailThietBi name={thietBiName}/>} />
           <Route path='/thietbi/capnhatthietbi' element={<UpdateThietBi  name={thietBiName} />} />

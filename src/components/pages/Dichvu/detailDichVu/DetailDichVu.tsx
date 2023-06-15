@@ -184,11 +184,11 @@ const DetailDichVu = (props:dichVuProps) => {
                         <div style={{ float: 'left', marginLeft: '12px' }}>
                             <div className='layout_DetailDichVu_Between_text'>Chọn thời gian</div>
                             <Space direction="vertical">
-                                <DatePicker style={{ borderRadius: '8px', width: '130px' }} defaultValue={moment('10/10/2021', dateFormatList[0])} format={dateFormatList} />
+                                <DatePicker style={{ borderRadius: '8px', width: '130px' }} defaultValue={moment('10/10/2023', dateFormatList[0])} format={dateFormatList} />
                             </Space>
                             <AiFillCaretRight style={{ margin: '0px 7.5px' }} />
                             <Space direction="vertical">
-                                <DatePicker style={{ borderRadius: '8px', width: '130px' }} defaultValue={moment('18/10/2021', dateFormatList[0])} format={dateFormatList} />
+                                <DatePicker style={{ borderRadius: '8px', width: '130px' }} defaultValue={moment('18/10/2023', dateFormatList[0])} format={dateFormatList} />
                             </Space>
                         </div>
                         <div style={{ width: '206px', float: 'left', marginLeft: '12px' }}>

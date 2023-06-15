@@ -36,8 +36,8 @@ const BaoCao = () => {
     {
       id: '1212',
       tenDichVu: 'khám tim mạch',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
+      thoiGianCap: '14:35 - 07/11/2023',
+      hanSuDung: '14:35 - 07/12/2023',
       tinhTrang: 'Đang chờ',
       nguonCap: 'Kiosk'
 
@@ -45,8 +45,8 @@ const BaoCao = () => {
     {
       id: '1213',
       tenDichVu: 'khám răng hàm mặt',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
+      thoiGianCap: '14:35 - 07/11/2023',
+      hanSuDung: '14:35 - 07/12/2023',
       tinhTrang: 'Đã sử dụng',
       nguonCap: 'Kiosk'
 
@@ -54,8 +54,8 @@ const BaoCao = () => {
     {
       id: '1214',
       tenDichVu: 'khám sản - phụ khoa',
-      thoiGianCap: '14:35 - 07/11/2021',
-      hanSuDung: '14:35 - 07/12/2021',
+      thoiGianCap: '14:35 - 07/11/2023',
+      hanSuDung: '14:35 - 07/12/2023',
       tinhTrang: 'Bỏ qua',
       nguonCap: 'Kiosk'
 
@@ -166,13 +166,13 @@ const BaoCao = () => {
           <div className='row'>
             <div className="col-5" style={{ paddingRight: '0px' }}>
               <Space direction="vertical">
-                <DatePicker style={{ borderRadius:'8px' }} defaultValue={moment('10/10/2021', dateFormatList[0])} format={dateFormatList} />
+                <DatePicker style={{ borderRadius:'8px' }} defaultValue={moment('10/10/2023', dateFormatList[0])} format={dateFormatList} />
               </Space>
             </div>
             <div className="col-2 text-center" style={{ margin:'auto' }}><AiFillCaretRight /></div>
             <div className="col-5" style={{ paddingLeft: '0px' }}>
               <Space direction="vertical">
-                <DatePicker style={{ borderRadius:'8px' }} defaultValue={moment('18/10/2021', dateFormatList[0])} format={dateFormatList} />
+                <DatePicker style={{ borderRadius:'8px' }} defaultValue={moment('18/10/2023', dateFormatList[0])} format={dateFormatList} />
               </Space></div>
           </div>
         </div>

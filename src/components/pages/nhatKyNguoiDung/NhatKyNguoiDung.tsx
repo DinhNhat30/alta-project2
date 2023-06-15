@@ -31,25 +31,25 @@ const data1: any = [
 
   {
     tenDangNhap: 'tuyetnguyen@12',
-    thoiGianHD: '01/02/2021 15:12:17',
+    thoiGianHD: '01/02/2023 15:12:17',
     IP: '192.168.3.1',
     thaoTac: 'Cập nhật thông tin dịch vụ DV_01',
   },
   {
     tenDangNhap: 'tuyet@12',
-    thoiGianHD: '01/02/2021 15:12:17',
+    thoiGianHD: '01/02/2023 15:12:17',
     IP: '192.168.3.1',
     thaoTac: 'Cập nhật thông tin dịch vụ DV_01',
   },
   {
     tenDangNhap: 'ngan@12',
-    thoiGianHD: '01/02/2021 15:12:17',
+    thoiGianHD: '01/02/2023 15:12:17',
     IP: '192.168.3.1',
     thaoTac: 'Cập nhật thông tin dịch vụ DV_01',
   },
   {
     tenDangNhap: 'hong@12',
-    thoiGianHD: '01/02/2021 15:12:17',
+    thoiGianHD: '01/02/2023 15:12:17',
     IP: '192.168.3.1',
     thaoTac: 'Cập nhật thông tin dịch vụ DV_01',
   },
@@ -108,11 +108,11 @@ const NhatKyNguoiDung = () => {
           <div className='layout_NhatKyNguoiDung_text'>Chọn thời gian</div>
           <div >
             <Space  direction="vertical">
-              <DatePicker style={{ borderRadius:'8px' }} defaultValue={moment('10/10/2021', dateFormatList[0])} format={dateFormatList} />
+              <DatePicker style={{ borderRadius:'8px' }} defaultValue={moment('10/10/2023', dateFormatList[0])} format={dateFormatList} />
             </Space>
             <AiFillCaretRight style={{ margin:'0px 7.5px' }} />
             <Space direction="vertical">
-              <DatePicker style={{ borderRadius:'8px' }} defaultValue={moment('18/10/2021', dateFormatList[0])} format={dateFormatList} />
+              <DatePicker style={{ borderRadius:'8px' }} defaultValue={moment('18/10/2023', dateFormatList[0])} format={dateFormatList} />
             </Space>
           </div>
         </div>

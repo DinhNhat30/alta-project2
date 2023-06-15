@@ -67,7 +67,7 @@ const DashBoardChartTuan = () => {
     <div style={{ position: 'relative' }} className='layout_Dashboard_charts row'>
       <div className='layout_Dashboard_charts_Thongke col-6'>
         <div className='layout_Dashboard_charts_Thongke_text'>Bảng thống kê theo tuần </div>
-        <div>Tháng 11/2021</div>
+        <div>Tháng 05/2023</div>
       </div>
       <div style={{ padding: '20px', height: '42px', display: 'block' }} className='col-6'>
       </div>

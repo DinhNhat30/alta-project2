@@ -65,11 +65,11 @@ const DetailCapSo = (props:capSoProps) => {
                         </div>
                         <div className='layout_DetailCapSo_Form_Container_left_text' >
                             <div className='layout_DetailCapSo_Form_Container_left_label' >Thời gian cấp:</div>
-                            <div className='layout_DetailCapSo_Form_Container_left_HoTen'>14:35 - 07/11/2021</div>
+                            <div className='layout_DetailCapSo_Form_Container_left_HoTen'>14:35 - 07/11/2023</div>
                         </div>
                         <div className='layout_DetailCapSo_Form_Container_left_text' >
                             <div className='layout_DetailCapSo_Form_Container_left_label' >Hạn sử dụng:</div>
-                            <div className='layout_DetailCapSo_Form_Container_left_HoTen'>18:00 - 07/11/2021</div>
+                            <div className='layout_DetailCapSo_Form_Container_left_HoTen'>18:00 - 07/11/2023</div>
                         </div>
                     </div>
                     <div className='layout_DetailCapSo_Form_Container_left'>
